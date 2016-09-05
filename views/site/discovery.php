@@ -229,11 +229,11 @@ use yii\helpers\Html;
         <span class="modal-close"></span>
         <div class="modal-media-title">Howdy! Let's get started by creating your personal blog</div>
         <hr class="blog-line" />
-        <form class="form-horizontal" role="form">
+        <form id="blogForm" class="form-horizontal" role="form">
             <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                <label for="inputBlogName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-3 col-sm-offset-0">
-                    <input type="text" class="form-control blogCreateInput" id="inputEmail3" placeholder="Name">
+                    <input name="Blog[blog-name]" type="text" class="form-control blogCreateInput" id="inputBlogName" placeholder="Name">
                 </div>
                 <div class="col-sm-3">
                     <span class="blogCreatePostfix">.trendsquare.com</span>
@@ -243,21 +243,21 @@ use yii\helpers\Html;
             </div>
 
             <div class="form-group">
-                <label for="inputEmail4" class="col-sm-2 control-label">Title</label>
+                <label for="inputBlogTitle" class="col-sm-2 control-label">Title</label>
                 <div class="col-sm-9 col-sm-offset-0">
-                    <input type="text" class="form-control blogCreateInput" id="inputEmail4" placeholder="Title">
+                    <input name="Blog[blog-title]" type="text" class="form-control blogCreateInput" id="inputBlogTitle" placeholder="Title">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="inputEmail4" class="col-sm-2 control-label">Description</label>
+                <label for="blogCreateInputArea" class="col-sm-2 control-label">Description</label>
                 <div class="col-sm-9 col-sm-offset-0">
-                    <textarea class="form-control blogCreateInput" id="blogCreateInputArea" rows="3"></textarea>
+                    <textarea name="Blog[blog-descr]" class="form-control blogCreateInput" id="blogCreateInputArea" rows="3"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="inputEmail4" class="col-sm-2 control-label" id="blogTagLabel">Tags</label>
+                <label class="col-sm-2 control-label" id="blogTagLabel">Tags</label>
 
                 <div id="blogTags" class="col-sm-9">
                     <div data-tags-input-name="tag" id="tagBox"></div>
@@ -305,6 +305,20 @@ use yii\helpers\Html;
             e.preventDefault();
             $('.blog-add-tag-input').fadeIn();
         });
+        
+        
+        $('#inputBlogName').bind('change', function() {
+            $.ajax({
+                url: '/blog/checkname',
+                method: 'POST',
+                dataType: 'JSON',
+                data: { blogName: $(this).val() },
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        })
+        
 
     });
 </script>
