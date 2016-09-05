@@ -1,0 +1,32 @@
+<div class="modal-related-posts">
+    <div class="post-header">
+        <h3 id="post-header-editable" class="" contenteditable="true">{{#if headline}}{{headline}}{{else}}Recommended for you{{/if}}</h3>
+        <a href="#" class="post-header-edit" onClick="$('#post-header-editable').focus(); return false;" ></a>
+        {{! <input class="related-posts" type="text" val="Recommended for you"/> }}
+        <a href="#" class="bbm-button close-button"></a>
+    </div>
+    <div class="modal-related-posts-tabs-wp">
+        <div class="modal-related-posts-tabs">
+            {{#equal listType 'all'}}
+                <a href="#" class="gray-modal-post selected all-posts">All posts</a>
+                <a href="#" class="space gray-modal-post related-posts">Related posts</a>
+            {{else}}
+                <a href="#" class="gray-modal-post all-posts">All posts</a>
+                <a href="#" class="space gray-modal-post selected related-posts">Related posts</a>
+            {{/equal}}
+        </div>
+        <div class="modal-related-posts-search-wp">
+            <input type="text" class="modal-related-posts-search-input search-post" placeholder="input your search" value="{{keyword}}">
+        </div>
+        <div class="modal-related-posts-search-button" id="post-search">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <div class="post-container"></div>
+    <div class="modal-related-posts-controls">
+        <span>Select up to 5 previous posts to current post</span>
+        <a class="modal-related-posts-controls-add" href="#">add</a>
+        <a class="modal-related-posts-controls-cancel" href="#">cancel</a>
+    </div>
+    <!--<button type="submit" class="post-btn btn-post-add">Close</button>-->
+</div>

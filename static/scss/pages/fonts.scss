@@ -1,0 +1,59 @@
+/* included only when we don't want to use fonts from google server */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../fonts/OpenSans-300.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/OpenSans-400.woff) format('woff');
+}
+@font-face{
+  font-family: 'OpenSansBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('OpenSansBold'), url(../fonts/OpenSansBold.woff) format('woff');
+}
+/* font-family: "OpenSansSemiBold"; */
+@font-face {
+  font-family: "OpenSansSemiBold";
+  src: local('OpenSansSemiBold'), url(../fonts/OpenSansSemiBold.woff) format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansExtraBold"; */
+@font-face {
+  font-family: "OpenSansExtraBold";
+  src: local('OpenSansSemiBold'), url(../fonts/OpenSansExtraBold.woff) format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansLight"; */
+@font-face {
+  font-family: "OpenSansLight";
+  src: local('OpenSansSemiBold'), url(../fonts/OpenSansLight.woff) format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "OpenSansItalic"; */
+@font-face {
+  font-family: "OpenSansItalic";
+  src: local('OpenSansItalic'), url(../fonts/OpenSansItalic.woff) format('woff');
+  font-style: normal;
+  font-weight: normal;
+}/* font-family: "PTSerifItalic"; */
+@font-face {
+  font-family: "PTSerifItalic";
+  src: local('PTSerifItalic'), url(../fonts/PTSerifItalic.woff) format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(../fonts/OpenSans-600.woff) format('woff');
+}

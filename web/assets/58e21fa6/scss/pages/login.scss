@@ -1,0 +1,551 @@
+$device-small: 320px;
+$form-width: 440px;
+$device-large: 1200px;
+$main-background-color: #eef3f4;
+$form-background-color: #ffffff;
+$form-gray-background-color: #e5e9ea;
+$form-ping-color: #fc3768;
+
+@mixin rounded-corner($arc) {
+  -moz-border-radius: $arc;
+  -webkit-border-radius: $arc;
+  border-radius: $arc;
+}
+
+@mixin rounded-corner-important($arc) {
+  -moz-border-radius: $arc !important;
+  -webkit-border-radius: $arc !important;
+  border-radius: $arc !important;
+}
+
+@mixin retina($ratio, $url, $imgWidth, $imgHeight){
+  @media (-webkit-min-device-pixel-ratio:$ratio),
+  (min--moz-device-pixel-ratio:$ratio),
+  (-o-min-device-pixel-ratio:$ratio+'/'+'1'),
+  (min-resolution:$ratio+dppx) {
+    background: url($url) 0 0 no-repeat;
+    background-size:  $imgWidth+px $imgHeight+px;
+  }
+}
+
+input[type="text"],
+input[type="password"]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.login-layout {
+  background-image: none;
+  background-color: $main-background-color;
+  position: static;
+
+  h1 {
+    position: relative;
+    .ts-icon {
+      background: url('../images/login/logo.png') 0 0 no-repeat;
+      width: 58px;
+      height: 64px;
+//      display: block;
+      margin: 0 auto;
+      text-indent: 100%;
+
+      white-space: nowrap;
+      overflow: hidden;
+
+      outline: none;
+      cursor: default;
+      position: relative;
+      display: none;
+
+//      @include retina(2, '../images/login/logo2x.png', 58, 64);
+
+    }
+
+    img {
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+      margin: 0 auto;
+      outline: none;
+    }
+    area {
+      display: block;
+      cursor: pointer;
+      color: transparent;
+      outline:none;
+      background-color: transparent;
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+    }
+  }
+
+
+
+  .space-30{
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 30px 0 0;
+  }
+
+  .login-container{
+    margin-bottom: 60px;
+    min-width: 300px;
+    @media screen and (max-width: $form-width) {
+      width: 100%;
+    }
+    @media screen and (min-width: $form-width) {
+      width: 440px;
+    }
+  }
+
+  h4 {
+    font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
+
+  .widget-main {
+    background-color: $form-background-color;
+    padding-bottom: 20px;
+  }
+
+  .header {
+    border: none;
+    line-height: 28px;
+    margin-top: 18px;
+    padding-bottom: 4px;
+  }
+
+  .register-desc {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'OpenSans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    strong {
+      @include rounded-corner(3px);
+
+      font-family: 'OpenSansBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: $form-gray-background-color;
+      padding: 0 5px;
+      display: inline-block;
+    }
+  }
+
+  fieldset{
+    @media screen and (max-width: $form-width) {
+      width: 100%;
+
+      .firstname-label,
+      .lastname-label {
+        float: left;
+        width: 48%;
+      }
+      .lastname-label{
+        margin-left: 4%;
+      }
+    }
+    @media screen and (min-width: $form-width) {
+      width: 320px;
+      margin: 0 auto 0px;
+
+      .firstname-label,
+      .lastname-label {
+        float: left;
+      }
+      .lastname-label{
+        margin-left: 9px;
+      }
+    }
+
+    .names-wp{
+      height: 65px;
+    }
+
+    label{
+      position: relative;
+    }
+
+    .validate-icon{
+      display:none;
+      width:12px;
+      height:12px;
+      position:absolute;
+      color: #d6d6d6;
+      right: 15px;
+      top: 18px;
+    }
+
+    .terms{
+      font-size: 12px;
+      color: #aeaeae;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .has-error{
+    input[type="text"],
+    input[type="password"]{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      background-color: #ffedf1;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .popover-content{
+      color: #9d4259;
+    }
+  }
+
+  input[type="text"],
+  input[type="password"]{
+
+    @include rounded-corner-important(6px);
+
+    padding: 15px 40px 15px 15px;
+    height: 50px;
+//    border-color: #ededed;
+    font-size: 16px;
+    font-family: 'OpenSansSemiBold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    outline-color: #ededed;
+    clear: both;
+    color: #333;
+
+    &:focus{
+      border-color: #3d89cc;
+    }
+  }
+
+  input[type="checkbox"]{
+    color: $form-ping-color;
+    text-shadow: 0 0 0 transparent;
+  }
+
+  .field-login-form-password input[type="text"],
+  .field-login-form-password input[type="password"]{
+    @include rounded-corner-important(6px);
+    padding-right: 40px;
+  }
+
+  .field-register-form-firstname,
+  .field-register-form-lastname{
+    @media screen and (min-width: $form-width) {
+      width: 155px;
+    }
+    @media screen and (max-width: $form-width) {
+      width: 100%;
+    }
+    input[type="text"] {
+      @media screen and (min-width: $form-width) {
+        width: 155px;
+      }
+      @media screen and (max-width: $form-width) {
+        width: 100%;
+      }
+    }
+  }
+
+  label{
+    margin-bottom: 0;
+  }
+}
+
+.additional{
+  @media screen and (max-width: $form-width) {
+    width: 100%;
+  }
+  @media screen and (min-width: $form-width) {
+    width:320px;
+    margin: 0 auto;
+  }
+
+  .forgot-wp label{
+    cursor: pointer;
+  }
+
+  .forgot-wp, .forgot-password-link-wp{
+    display: inline-block;
+    width: 49%;
+  }
+  .forgot-password-link-wp{
+    text-align: right;
+  }
+}
+
+
+//.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline
+.form-group.has-error .control-label, .form-group.has-error .help-block, .form-group.has-error .help-inline
+{
+  color: #9d4259;
+}
+
+.help-block{
+  margin-bottom: 20px;
+//  display: none;
+
+  b{
+    font-family: "OpenSansSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+  }
+}
+
+%submit-button{
+  display: block;
+  @include rounded-corner-important(25px);
+  background-color: $form-ping-color !important;
+  width: 180px;
+  height: 50px;
+  margin: 15px auto 10px;
+  border: none;
+  font-family: "OpenSansSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  outline: none;
+  letter-spacing: 2px;
+  text-shadow: none;
+
+  &:hover{
+    @include rounded-corner-important(29px);
+
+    height: 54px;
+    width: 184px;
+    margin: 13px auto 8px;
+  }
+}
+
+#login-box{
+
+  .forgot-password-link {
+    color: $form-ping-color;
+    text-decoration: none;
+    outline: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .auth-clients{
+    height: 0;
+    margin: 0 0 0;
+    padding: 0;
+  }
+
+  button[type="submit"]{
+    @extend %submit-button;
+  }
+}
+
+#signup-box button[type="submit"],
+#message-box button[type="submit"]
+{
+  @extend %submit-button;
+}
+
+#resend-box button[type="submit"]{
+  @extend %submit-button;
+  width: 300px;
+
+  &:hover{
+    width: 304px;
+  }
+}
+
+#reset-box button[type="submit"]{
+  @extend %submit-button;
+  width: 240px;
+  &:hover{
+    width: 244px;
+  }
+}
+
+#forgot-box button[type="submit"]{
+  @extend %submit-button;
+  width: 270px;
+  font-size: 14px;
+  &:hover{
+    width: 274px;
+  }
+}
+
+%grey-toolbar{
+  margin: 0 auto;
+  background-color: $form-gray-background-color !important;
+  color: #333;
+  border: none;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding: 0;
+
+  @media screen and (max-width: $form-width) {
+    width: 80%;
+    padding: 30px 10px;
+  }
+  @media screen and (min-width: $form-width) {
+    width: 360px;
+    line-height: 75px;
+    vertical-align: middle;
+    height: 75px;
+  }
+}
+.login-box .toolbar,
+.signup-box .toolbar,
+.resend-box .toolbar,
+.forgot-box .toolbar,
+.reset-box .toolbar
+{
+  @extend %grey-toolbar;
+
+  %toolbar-link{
+    color: $form-ping-color;
+    text-decoration: none;
+    outline: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  .user-signup-link{
+    @extend %toolbar-link;
+  }
+  .back-to-login-link{
+    @extend %toolbar-link;
+    font-size: 16px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    text-shadow: none;
+  }
+}
+
+.login-box .field-login-form-password,
+.reset-box .field-recovery-form-repeatpassword,
+.reset-box .field-recovery-form-password
+{
+  margin-bottom: 20px;
+  min-height: 50px;
+
+  .input-group{
+    display: block;
+    height: 50px;
+  }
+
+  span.add-on{
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    z-index: 10;
+    width: 32px;
+    height: 42px;
+//    outline-color: #fff;
+    outline: none;
+
+    .glyphicon{
+      top: 12px;
+      left: 9px;
+      outline: none;
+    }
+  }
+}
+
+.popover{
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  overflow: visible;
+  min-width: 175px;
+
+  white-space: nowrap;
+
+  border-color: #ededed;
+
+  @include rounded-corner(4px);
+
+  &.right {
+    margin-left: 25px;
+    max-width: 325px;
+  }
+
+  &.left{
+    margin-left: -25px;
+    max-width: 325px;
+  }
+  &.right>.arrow{
+    border-right-color: #ededed;
+  }
+  &.bottom>.arrow{
+    border-bottom-color: #ededed;
+  }
+
+  .popover-content{
+    font-family: 'OpenSans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: 19px 14px;
+  }
+}
+
+%my-checked{
+  display: none;
+  width: 12px;
+  height:12px;
+  color: #dadfe0;
+  cursor:pointer;
+}
+.my-checked-on{
+  @extend %my-checked;
+  color: $form-ping-color;
+}
+.my-checked-off{
+  @extend %my-checked;
+  display: inline-block;
+}
+
+.sing-trendsquare {
+  position: absolute;
+  bottom: 20px;
+  left: 1%;
+  width:98%;
+  margin: 0 auto;
+  font-size: 12px;
+  color: #afafaf;
+  text-align: center;
+}
+
+.letter{
+  background: transparent url('../images/login/letter.png') 0 0 no-repeat;
+  @include retina(2, '../images/login/letter2x.png', 112, 46);
+
+  width: 155px; //112px;
+  height: 46px;
+  margin: 22px auto 0;
+}
+
+.some-text{
+  text-align: center;
+  font-family: 'OpenSans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+
+  @media screen and (min-width: $form-width) {
+    width: 330px;
+    margin: 0 auto;
+  }
+
+  i{
+    font-family: "OpenSansSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+  }
+}
+

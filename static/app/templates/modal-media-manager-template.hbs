@@ -1,0 +1,85 @@
+<span class="modal-close"></span>
+<div class="modal-media-title">Insert image</div>
+<div class="tabs image-media-library">
+    <div class="ve-tab tab-upload">Upload</div>
+    <div class="ve-tab tab-url">By URL</div>
+
+    {{#unless onlyupload}}
+        <div class="ve-tab tab-library">Image library</div>
+    {{/unless}}
+
+    <div class="ve-tab tab-search">Search</div>
+</div>
+<div id="media-library-image-load" class="dropzone-wrapper media-library-image-content">
+    <div class="dropzone">
+        <div class="gallery-upload-images"></div>
+        <div class="dz-default dz-message"><span>Drag an image here<br><span class="dzm">Or, if you prefer...</span><br><button class="app-btn-default pink action-upload">Choose an image to upload</button></span><input type="file" id="upload-gallery-images" class="hidden" multiple="true"/></div>
+    </div>
+    <div class="action-buttons-panel text-right">
+        {{#unless onlyupload}}
+            <button class="app-btn-default pink action-add">Add to post</button>
+            <button class="app-btn-default action-cancel">Cancel</button>
+        {{else}}
+            <button class="app-btn-default action-cancel">Close</button>
+        {{/unless}}
+    </div>
+</div>
+<div id="media-library-image-url" class="image-url-wrapper media-library-image-content">
+    <div class="image-url-field">
+        <div class="form-group">
+            <input type="text" placeholder="Paste an image URL here" class="form-control insert-url">
+        </div>
+    </div>
+    <div class="url-search-result">
+        <div class="message text-center">
+            <p class="large">If your URL is correct, you’ll see an image preview here</p>
+            <p class="small">Large images may take a few minutes to appear</p>
+        </div>
+    </div>
+    <div class="action-buttons-panel text-right">
+        {{#unless onlyupload}}
+            <button class="app-btn-default pink action-add">Add to post</button>
+            <button class="app-btn-default action-cancel">Cancel</button>
+        {{else}}
+            <button class="app-btn-default action-cancel">Close</button>
+        {{/unless}}
+    </div>
+</div>
+
+{{#unless onlyupload}}
+    <div id="media-library-image-collection" class="image-library-wrapper media-library-image-content">
+        <div class="media-gallery-wrapper"></div>
+        <div class="action-buttons-panel text-right">
+            <button class="app-btn-default pink action-add">Add to post</button>
+            <button class="app-btn-default action-cancel">Cancel</button>
+        </div>
+    </div>
+{{/unless}}
+
+<div id="media-library-image-search" class="image-search-wrapper media-library-image-content">
+    <div class="image-search-field">
+        <div class="form-inline clearfix">
+            <div class="form-group col-sm-12">
+                <div class="col-sm-11 col-xs-10">
+                    <input type="text" placeholder="Enter a search keyword" class="form-control search-url">
+                </div>
+                <div class="col-sm-1 col-xs-2">
+                    <button class="app-btn-round pink search search-images-button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="image-search-result">
+        <div class="message text-center">
+            <p class="small">Use the Creative Commons search for images you can use for commercial purposes.</p>
+        </div>
+    </div>
+    <div class="action-buttons-panel text-right">
+        {{#if onlyupload}}
+            <button class="app-btn-default pink action-add-library">Add in library</button>
+        {{else}}
+            <button class="app-btn-default pink action-add">Add to post</button>
+            <button class="app-btn-default action-cancel">Cancel</button>
+        {{/if}}
+    </div>
+</div>

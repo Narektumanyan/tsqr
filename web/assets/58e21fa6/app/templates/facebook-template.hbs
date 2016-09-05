@@ -1,0 +1,24 @@
+<div class="videoessenceFacebookPost {{#if saved}}gray{{/if}}">
+    <div class="social-embed-item facebook">
+        <div class="social-embed-header">
+            <div>
+                <i class="fa fa-facebook" style="height: 32px;line-height: 32px;color: #45619d;  font-size: 20px;"></i>
+            </div>
+            <div class="author"><a href="{{author_url}}" class="author-link">{{author}}</a></div>
+            <div class="time-ago">{{moment from=published}}</div>
+        </div>
+        <div class="social-embed-content">
+			{{{content}}}
+        </div>
+        <div class="social-embed-footer">
+            <a class="facebook-share" target="_blank" href="https://www.facebook.com/sharer.php?u={{url}}"></a>
+        </div>
+    </div>
+    <div class="btn-wrapper">
+		{{#if saved}}
+            <button type="submit" class="remove-btn btn-post-embed">Remove</button>
+		{{else}}
+            <button type="submit" class="embed-btn btn-post-embed">Embed</button>
+		{{/if}}
+    </div>
+</div>

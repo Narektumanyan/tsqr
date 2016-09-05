@@ -1,0 +1,34 @@
+<div class="custom-roi" data-start="{{timeStart}}" data-stop="{{timeStop}}" data-displayOnPause="{{display}}">
+    {{#if typeIsLead}}
+        <div class="compaig-wrapper compaig-lead">
+            <div class="background" style="background-color: {{backgroundColor}}; opacity: {{opacity}}"></div>
+            <div class="headline">{{headline}}</div>
+            <div class="subheadline">{{subHeadline}}</div>
+            <div class="form {{#if askNames}}with-name{{/if}}">
+                <input type="text" class="form-name" placeholder="Your name" value="">
+                <input type="text" class="form-email" placeholder="Your mail" value="">
+                <button type="submit" class="button" style="background-color: {{buttonColor}};">{{buttonText}}</button>
+            </div>
+            {{#if allowSkip}}
+                <div class="skip">Skip</div>
+            {{/if}}
+        </div>
+    {{/if}}
+    {{#if typeIsCta}}
+        <div class="compaig-wrapper compaig-cta">
+            <div class="cta" style="background-color: {{buttonColor}}; left: {{left}}px; top: {{top}}px;">
+                <a href="{{targetUrl}}" target="_blank" class="button">{{buttonText}}</a>
+            </div>
+        </div>
+    {{/if}}
+    {{#if typeIsAnnotation}}
+        <div class="compaig-wrapper compaig-annotation">
+            <div class="annotation" style="background-color: {{backgroundColor}}; left: {{left}}px; top: {{top}}px;">
+                {{#if showCloseButton}}
+                    <a href="#" class="closeAnnotation">&times;</a>
+                {{/if}}
+                <a class="text" href="{{targetUrl}}" target="_blank" style="color: {{textColor}}; font-size: {{textFontSize}}">{{text}}</a>
+            </div>
+        </div>
+    {{/if}}
+</div>

@@ -1,0 +1,96 @@
+<div class="customization_content" style="display: block;" campaign-id="1">
+    <div class="welcome-header clearfix">
+        <h3 class="pull-left">Create a new annotation</h3>
+    </div>
+    <div class="clearfix row">
+        <div class="col-md-6 column">
+            <div class="form-group">
+                <label for="text">Text:</label>
+                <textarea id="text" rows="2" class="from-control special"></textarea>
+            </div>
+            <div class="form-group">
+                <div id="textColor" class="nested">
+                    <div class="color-picks clearfix colorHolder">
+                        <div class="colorSelector tick" style="width: 101px; margin-top: -5px;">
+                            <input type="radio" name="colorText" class="color-pick" value="#000000">
+                            <a class="color-picking round color-holder"><i class="fa fa-check" style="background: #000000; margin-top: 5px;"></i></a>
+                            <span class="color-picking no-color-holder">#000000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="nested">
+                    <select id="textFontSize">
+                        {{#each fontSizes}}
+                            <option value="{{this}}">{{this}}px</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group colors">
+                <label for="backgroundColor">Background color:</label>
+                <div id="backgroundColor">
+                    <div class="color-picks clearfix colorHolder">
+                        {{#each colors}}
+                            <input type="radio" name="backgroundColor" class="color-pick" value="{{this}}">
+                            <a class="color-picking"><i class="fa fa-check" style="background: {{this}}"></i></a>
+                        {{/each}}
+
+                        <div class="colorSelector pull-right" style="width: 101px; margin-top: -5px;">
+                            <input type="radio" name="backgroundColor" class="color-pick" value="#FFFFFF">
+                            <a class="color-picking color-holder"><i class="fa fa-check" style="background: #FFFFFF; margin-top: 5px;"></i></a>
+                            <span class="color-picking no-color-holder">#FFFFFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="targetUrl">Target URL:</label>
+                <input type="text" class="form-control special" id="targetUrl" value="">
+                <div class="helper">This URL will open then annotation is clicked</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 column">
+            <div class="clearfix preview-wrapper">
+                <div class="col-md-12 column thumbnail-wrapper">
+                    <img src="{{thumbnail}}" alt="" class="col-md-12 column popup-thumbnail pushOver">
+                    <div class="compaig-wrapper" id="previewAnnotation">
+                        <div class="annotation draggable">
+                            <a href="#" class="closeAnnotation">&times;</a>
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix top2 select_range_wrapper">
+                CTA button will appear at
+                <div class="select_range">
+                    <input class="select_value" id="timeStart" type="text" value="" data-toggle="dropdown">
+                    <div class="dropdown-menu" aria-labelledby="timeStart">
+                        <div class="sliderWidget" id="timeStartSlider"></div>
+                    </div>
+                </div>
+                and disappear at
+                <div class="select_range">
+                    <input class="select_value secondSelect" id="timeStop" type="text" value="" data-toggle="dropdown">
+                    <div class="dropdown-menu" aria-labelledby="timeStop">
+                        <div class="sliderWidget" id="timeStopSlider"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix top2">
+                <div class="col-md-6 column" style="padding: 0">
+                    <input type="checkbox" class="special" id="displayOnPause"><label for="displayOnPause"><span></span><span>Display if video is paused</span></label>
+                </div>
+            </div>
+            <div class="clearfix top2">
+                <div class="col-md-6 column" style="padding: 0">
+                    <input type="checkbox" class="special" id="showCloseButton"><label for="showCloseButton"><span></span><span>Show close button</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 column top2">
+            <input class="btn btn-lg btn-danger submitMarketing" id="addCompaign" type="button" value="Add campaign to video">
+        </div>
+    </div>
+</div>

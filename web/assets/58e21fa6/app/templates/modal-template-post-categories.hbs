@@ -1,0 +1,50 @@
+<div class="modal-post-category-add">
+    <div class="post-header">
+        <h3 class="related-posts margin1">Add a new category</h3>
+        <a href="#" class="bbm-button close-button"></a>
+    </div>
+    <div class="post-middle">
+        <div class="post-category-row">
+            <label for="category-name">
+                Name
+            </label>
+            <div class="category-name-wp">
+                <input id="category-name" name="category-name" type="text"/>
+            </div>
+            <div class="category-img-wp">
+                <span class="first-letter" style="{{randomBackgroundColor}}">N</span>
+                <input type="hidden" id="category-image" name="category-image" />
+                <input type="hidden" id="category-barge" name="category-barge" />
+                <a href="#" class="change-barge">Change barge...</a>
+            </div>
+        </div>
+        <div class="post-category-row">
+            <label for="category-desc">
+                Description <span>(optional)</span>
+            </label>
+            <div class="category-desc-wp">
+                <textarea name="category-desc" id="category-desc" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="post-category-row">
+            <label for="category-parent">
+                Parent category
+            </label>
+            <div class="category-parent-wp">
+                <select name="category-parent" id="category-parent" class="selectpicker">
+                    {{#each parentCategories}}
+                        <option value="{{child.attributes.id}}">{{child.attributes.label}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <!--<button type="submit" class="post-btn btn-post-add">Close</button>-->
+    <a href="#" class="post-category-add-create">create</a>
+    <a href="#" class="post-category-add-close">cancel</a>
+</div>
+{{!<div class="popup-region">
+    <div class="bbm-modal__section">
+
+    </div>
+</div>}}

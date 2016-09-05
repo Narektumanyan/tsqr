@@ -1,0 +1,38 @@
+{
+    "name": "video-exxence/trend-square",
+    "description": "Video-blog management",
+    "keywords": [],
+    "homepage": "http://video-essence.rit-soft.com/",
+    "type": "project",
+    "license": "",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "google/apiclient": "dev-master",
+        "vimeo/vimeo-api" : "1.1.*",
+        "dektrium/yii2-user": "<=0.9.4@dev",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "~2.0.3",
+
+        "googleads/googleads-php-lib": "*",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "zoonman/pixabay-php-api": "*",
+        "bower-asset/jquery.nicescroll": "*",
+        "abraham/twitteroauth": "0.5.*",
+        "voskobovich/yii2-many-many-behavior": "*",
+        "facebook/php-sdk-v4" : "4.0.*",
+        "embedly/embedly-php": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{{! id }}
+{{! label }}
+{{! open }}
+{{! inode }}
+{{! checkbox }}
+{{! radio }}
+{{! checked }}
+
+<div class="cat" data-id="{{ id }}">
+    <div class="cat-checkbox-wp">
+        {{#if checked }}
+            <span class="my-checked-on fa fa-check-square" style="display: inline-block;"></span>
+            <span class="my-checked-off fa fa-square-o" style="display: none;"></span>
+        {{else}}
+            <span class="my-checked-on fa fa-check-square" style="display: none;"></span>
+            <span class="my-checked-off fa fa-square-o" style="display: inline-block;"></span>
+        {{/if}}
+        <input type="checkbox" {{#if checked }}checked="checked"{{/if}} style="display: none;"/>
+    </div>
+
+    {{#unless barge }}
+    <span class="cat-icon" style="{{randomBackgroundColor}}">{{firstСharacter label}}</span>
+    {{else}}
+        <span class="cat-icon" style="">
+            <img src="{{ barge }}" alt="" width="30" height="30" />
+        </span>
+    {{/unless}}
+
+    <span class="cat-title">{{ label }}</span>
+
+    {{#ifNotCond id 1}}
+    <span class="delete-image" ></span>
+    {{/ifNotCond}}
+</div>

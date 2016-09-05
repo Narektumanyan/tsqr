@@ -1,0 +1,23 @@
+<span class="modal-close"></span>
+<div class="modal-media-title add-border">Image details</div>
+<div class="image-details-content default-padding">
+    <div class="align-wrapper">
+        <div class="image-preview">
+            <img src="{{path}}" alt="{{name}}"/>
+        </div>
+        <div class="image-info">
+            <div class="min-block-title">Info</div>
+            <div class="info">
+                <div class="t">{{name}}.{{info.type}}</div>
+                <div class="d">{{info.width}}x{{info.height}}px ({{size_str}})</div>
+            </div>
+            <div class="form form-default">
+                <input placeholder="Add title" type="text" name="image-details-name" value="{{name}}"/>
+                <textarea placeholder="Add a description (optional)" name="image-details-description">{{description}}</textarea>
+            </div>
+            <div class="actions">
+                <button class="app-btn-default pinkbg action-update">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

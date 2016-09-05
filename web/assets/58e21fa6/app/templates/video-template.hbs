@@ -1,0 +1,56 @@
+<div class="video-container {{type}} {{#if saved}} gray{{/if}}">
+    <div class="thumbnail-wrapper">
+        <div class="video-frame">
+            <span class="icon-play"></span>
+            <img src="{{image}}" class="image-view" />
+            <div class="duration-video">
+                <div class="background-opa">
+                </div>
+
+                <div class="duration-text">
+                    {{duration}}
+                </div>
+            </div>
+        </div>
+        <a class="to-add-video {{#if saved}} added{{/if}}"></a>
+    </div>
+    <div class="video-description">
+        <h3 class="lockup-title">
+            <a href="{{url}}" title="{{title}}">{{title}}</a>
+        </h3>
+
+        <div class="channel-link">
+            From <a href="{{channel_url}}" title="{{channel_title}}">{{channel_title}}</a>
+        </div>
+        <div class="video-detail">
+            {{formatCommDelimiter view_count}} views &bull; {{moment from=published_at}}
+        </div>
+        <!--<div class="button-like">-->
+            <!--{{#if followed}}-->
+                <!--<a class="fa fa-check"></a>-->
+            <!--{{else}}-->
+                <!--<i class="fa fa-heart"></i>-->
+            <!--{{/if}}-->
+        <!--</div>-->
+        <!--<a class="fa fa-plus-circle"></a>-->
+
+        <!--<i class="fa fa-ellipsis-v"></i>-->
+        <!--<i class="elipse-menu"></i>-->
+        <button type="button" class="hide-video-block {{#if showButtonVideoHide}} showed {{else}} hidden {{/if}}">Don’t show me this</button>
+
+        <!--<div class="btn-group dropleft elipse-menu-wp">-->
+            <!--<i class="elipse-menu dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>-->
+            <!--<ul class="dropdown-menu dropdown-menu-right">-->
+                <!--<li>-->
+                    <!--<div class="button-like">-->
+                        <!--{{#if followed}}-->
+                            <!--<a class="fa fa-check"></a>-->
+                        <!--{{else}}-->
+                            <!--<i class="fa fa-heart"></i>-->
+                        <!--{{/if}}-->
+                    <!--</div>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="image-gallery-item view-library">
+<div class="img-wrap {{#if error}}error{{/if}}">
+	<div class="valign">
+		<div class="img">
+			{{#unless uploaded}}{{#unless error}}
+				<span class="ajax-image-loader"></span>
+			{{/unless}}{{/unless}}
+			<img src="{{#if preview}}{{preview}}{{else}}{{path}}{{/if}}" alt="{{name}}" title="{{name}}" class="{{#unless uploaded}}img-blur{{/unless}}">
+		</div>
+		{{#unless uploaded}}{{#unless error}}
+			<div class="upload-progress">
+				<span style="width:{{progress}}%;"></span>
+			</div>
+		{{/unless}}{{/unless}}
+	</div>
+</div>
+{{#if uploaded}}
+	<span class="checkbox">
+		{{#if selected}}
+			<span class="fa fa-check-square"></span>
+			<input name="selected-item" type="checkbox" checked="checked"/>
+		{{else}}
+			<span class="fa fa-square-o"></span>
+			<input name="selected-item" type="checkbox"/>
+		{{/if}}
+	</span>
+{{/if}}
+<div class="img-desc {{#unless uploaded}}uploading{{/unless}} {{#if error}}error{{/if}}">
+	{{#if uploaded}}
+		<span class="image-actions"></span>
+		<p class="t">{{name}}</span>
+		<p class="d">Uploaded {{date_text}}</p>
+	{{else}}
+		{{#unless error}}
+			<p class="t">{{name}}</p>
+			<p class="uploading-status">Uploading <span>{{progress}}</span>%...</p>
+			<span class="app-btn-round min gray cancel cancel-upload"></span>
+		{{else}}
+			<p class="t">{{name}}</p>
+			<p class="uploading-status">{{errorText}}</p>
+		{{/unless}}
+	{{/if}}
+</div>
+</div>

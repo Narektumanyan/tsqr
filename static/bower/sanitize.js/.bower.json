@@ -1,0 +1,14 @@
+{
+  "name": "sanitize.js",
+  "homepage": "https://github.com/gbirke/Sanitize.js",
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.0",
+    "commit": "533d96052398bfd212fde41cc661f1999b28e0fe"
+  },
+  "_source": "git://github.com/gbirke/Sanitize.js.git",
+  "_target": "*",
+  "_originalSource": "sanitize.js"
+}

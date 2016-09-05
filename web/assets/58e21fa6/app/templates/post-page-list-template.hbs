@@ -1,0 +1,51 @@
+{{!
+author: Object
+    lastname: "Loseev"
+    name: "Ivan"
+    __proto__: Object
+comments_count: 0
+content: "123123"
+created_at: "11/06/15 at 7:17 pm"
+id: 1
+status: 1
+title: "test page 1"
+trashed: 0
+}}
+
+<td class="pages-checkbox">
+    <input type="checkbox" name="selection[]" value="{{ id }}" style="display: none;">
+    <span class="my-checked-on fa fa-check-square" style="display: none;"></span>
+    <span class="my-checked-off fa fa-square-o" style="display: inline-block;"></span>
+</td>
+
+<td class="pages-name">
+    <div class="page-edit" data-id="{{ id }}">{{ title }}</div>
+    <div class="page-links">
+        <a href="#edit" class="page-edit" data-id="{{ id }}">Edit</a> &bull;
+        <a href="#view" class="page-view" data-id="{{ id }}">View</a> &bull;
+        {{#ifCond status 1}}
+            <a href="#publish" class="page-publish" data-id="{{ id }}">Publish</a> &bull;
+            <a href="#trash" class="page-trash" data-id="{{ id }}">Trash</a>
+        {{/ifCond}}
+        {{#ifCond status 2}}
+            <a href="#draft" class="page-draft" data-id="{{ id }}">Draft</a> &bull;
+            <a href="#trash" class="page-trash" data-id="{{ id }}">Trash</a>
+        {{/ifCond}}
+        {{#ifCond status 3}}
+            <a href="#restore" class="page-restore" data-id="{{ id }}">Restore to draft</a> &bull;
+            <a href="#delete" class="page-delete" data-id="{{ id }}">Delete</a>
+        {{/ifCond}}
+    </div>
+</td>
+
+<td class="pages-author">
+    <span class="author-image" style="background-color: #5ea9f7" data-label="123123">{{firstСharacter author.name }}{{firstСharacter author.lastname}}</span>
+</td>
+
+<td class="pages-comments">
+    {{ comments_count }}
+</td>
+
+<td class="pages-timestamp">
+    {{ created_at }}
+</td>

@@ -1,0 +1,13 @@
+<div class="topic-channel">
+    {{#if image}}
+    <a class="topic-image" href="{{ourUrl}}" style="background: url('{{image}}') 0 0 / 30px 30px no-repeat;"></a>
+    {{else}}
+    <a class="topic-image" href="{{ourUrl}}" style="{{randomBackgroundColor}}">{{firstСharacter title}}</a>
+    {{/if}}
+    <div class="title">
+       <a class="topic-content" href="{{ourUrl}}">{{title}}</a>
+    </div>
+    <div class="following found-channel-like">
+        <a class="follow-this {{#if followed}}followed{{/if}}" href="#follow-this">{{#if followed}}Following{{else}}Follow{{/if}}</a>
+    </div>
+</div>

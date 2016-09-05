@@ -1,0 +1,22 @@
+<div class="videoessenceGooglePost wm-style social-post-item-wrap">
+    <div class="social-embed-item googleplus">
+        <div class="social-embed-header">
+            <a target="_blank" href="{{author_url}}" class="social-icon-post"></a>
+            <div class="post-desc">
+                <div class="author"><a target="_blank" href="{{author_url}}" class="author-link">{{author}}</a></div>
+                <div class="time-ago">{{published}}</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="social-embed-content">
+            {{{content}}}
+        </div>
+    </div>
+    <div class="btn-wrapper">
+        {{#if saved}}
+            <button type="submit" class="remove-btn btn-post-embed {{#unless onhover}}nonhover{{/unless}}"></button>
+        {{else}}
+            <button type="submit" class="embed-btn btn-post-embed"></button>
+        {{/if}}
+    </div>
+</div>

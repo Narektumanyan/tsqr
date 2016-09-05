@@ -1,0 +1,22 @@
+.page-content {
+    background-color: #dfe0e2!important;
+}
+textarea.form-control, .form-control {
+    height: 34px!important;
+}
+
+.login-layout .widget-main {
+  padding: 16px 36px 36px;
+  background: #F7F7F7;
+}
+
+.light-login .widget-box {
+  border-bottom: 0;
+}
+
+div.message{
+   width: 700px;
+   text-align: center;
+   margin: auto;
+   margin-top: 20%; 
+}

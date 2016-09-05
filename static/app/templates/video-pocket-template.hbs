@@ -1,0 +1,15 @@
+<div class="pocket-item">
+    <div class="video-thumbnail-container">
+        <img src="{{image}}" class="thumbnail" style="width: 92px; height: 92px"/>
+    </div>
+    <div class="info">
+        <div class="title">
+            <a href="{{url}}" title="{{title}}">{{title}}</a>
+        </div>
+        <div class="channel-link">From <a href="{{channel_url}}" title="{{channel_title}}">{{channel_title}}</a></div>
+        <div class="video-detail">{{view_count}} views <span>{{moment from=published_at}}</span></div>
+        <a class="new-post-link" href="/post/publish?video_id={{id}}&type={{type}}&width={{width}}&height={{height}}">Create a post</a>
+        <i class="delete-from-pocket"></i>
+    </div>
+
+</div>

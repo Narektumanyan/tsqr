@@ -1,0 +1,26 @@
+.followed-panel {
+  width: 14%;
+  display: table-cell;
+  border-right: 1px solid #777;
+  font-size: 16px;
+  vertical-align: top;
+  padding: 12px 10px 0 10px;
+  .fa-circle-thin {
+    position: absolute;
+    color: #777;
+    top: 4px;
+    left: 9px;
+    font-size: 30px;
+  }
+  .followed-header {
+    position: relative;
+    padding: 7px 0 7px 50px;
+    color: #167ac6;
+    border: 1px solid #167ac6;
+  }
+  .followed-item {
+    position: relative;
+    padding: 7px 0 7px 50px;
+    color: #777;
+  }
+}

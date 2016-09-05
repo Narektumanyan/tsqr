@@ -1,0 +1,11 @@
+<div class="followed-item new">
+    {{#if image}}
+        <i class="channel-img" style="background: url('{{image}}') 0 0 / 30px 30px no-repeat;"></i>
+    {{else}}
+        <!--<i class="fa fa-circle-thin"></i>-->
+        <i class="channel-img" style="{{randomBackgroundColor}}">{{firstСharacter title}}</i>
+    {{/if}}
+    <div class="link-wp">
+        <a class="url" href="/site/channelvideos?channel_type={{type}}&channel_id={{{id}}}" title="{{title}}">{{title}}</a>
+    </div>&nbsp;<span>(1)</span><div class="dot"></div>
+</div>

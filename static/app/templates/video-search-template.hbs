@@ -1,0 +1,20 @@
+<div class="video-thumbnail-container">
+    <img src="{{image}}"/>
+    <div class="video-length">{{duration}}</div>
+</div>
+<div class="info">
+    <div class="title">
+        <a target="_blank" href="{{url}}">{{title}}</a>
+    </div>
+    <div class="description">
+        From <a target="_blank" href="{{channel_url}}">{{channel_title}}</a>
+    </div>
+    <div class="video-info">
+        <span class="views-count">{{view_count}} views</span>
+        <span class="added-time">{{published_at}}</span>
+    </div>
+</div>
+<div class="actions pull-right">
+    <button class="app-btn-default pink {{#if selected}}action-unselect{{else}}action-select{{/if}}">Add to post</button>
+</div>
+<div class="clearfix"></div>

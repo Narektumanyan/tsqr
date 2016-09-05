@@ -1,0 +1,57 @@
+<div class="category-info"></div>
+
+{{#if channelInfo}}
+    <div class="channel-wp">
+        <div class="channel">
+            {{#if noBanner}}
+                <div class="banner-img" style="background: #bcc4c5 url('{{#if retina}}{{ bigBanner }}{{else}}{{ normalBanner }}{{/if}}') -5px -5px no-repeat;"></div>
+                <div class="thumbinal-img" style="background: #bcc4c5 url('') center center no-repeat; {{randomBackgroundColor}}">{{firstСharacter channelInfo.snippet.title }}</div>
+            {{else}}
+                <div class="banner-img" style="background: transparent url('{{#if retina}}{{ bigBanner }}{{else}}{{ normalBanner }}{{/if}}') -5px -5px no-repeat;"></div>
+                <div class="thumbinal-img" style="background: transparent url('{{ channelInfo.snippet.thumbnails.default }}') center center no-repeat; "></div>
+            {{/if}}
+
+            <div class="channel-info">
+                <a class="back-to-category" href="{{ categoryLink }}">{{{ categoryName }}}</a><br/>
+                <h3 class="title">{{ channelInfo.snippet.title }} <div class="following {{#if followed}}followed{{/if}}">{{#if followed }}Following{{/if}} {{#unless followed}}Follow{{/unless}}</div></h3>
+                <div class="channel-statistic">{{ channelInfo.statistics.videoCount }} videos &bull; {{formatCommDelimiter channelInfo.statistics.viewCount }} views </div>
+            </div>
+            {{#if showLink}}
+                <a class="channel-link" target="_blank" {{ channelInfo.type }}" href="{{ channelTypeLink }}" > {{ channelInfo.type }}</a>
+            {{/if}}
+        </div>
+    </div>
+{{/if}}
+
+
+
+    <div class="video-list-controls {{#if isSearch}}video-list-search{{/if}}">
+
+            <div class="btn-group">
+                <i class="my-sort-icon desc"></i>
+                <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Popular<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Date</a></li>
+                </ul>
+            </div>
+
+
+        <!--<button type="button" class="btn btn-white btn-sm btn-primary do-big">-->
+        <button type="button" class="do-small  {{#unless bigView}}active{{/unless}}">
+            <!--<i class="icon-only ace-icon fa fa-th-large"></i>-->
+        </button>
+        <button type="button" class="do-big {{#if bigView}}active{{/if}}">
+            <!--<i class="icon-only ace-icon fa fa-align-justify"></i>-->
+            <!--<i class="icon-only ace-icon fa fa-th"></i>-->
+        </button>
+
+    </div>
+
+
+<div class="list {{#if bigView}}large{{/if}} row"></div>
+<div class="text-center {{#if gettingIsStop}}hidden{{/if}}">
+    <img src="/preloader.gif"/>
+</div>

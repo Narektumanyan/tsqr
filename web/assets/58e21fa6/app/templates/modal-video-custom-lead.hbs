@@ -1,0 +1,109 @@
+<div class="customization_content" style="display: block;" campaign-id="1">
+    <div class="welcome-header clearfix">
+        <h3 class="pull-left">Create a new lead capture form</h3>
+    </div>
+    <div class="clearfix row">
+        <div class="col-md-6 column">
+            <div class="form-group">
+                <label for="headline">Headline:</label>
+                <input type="text" class="form-control special" id="headline" value="">
+            </div>
+            <div class="form-group">
+                <label for="subHeadline">Sub-headline:</label>
+                <textarea id="subHeadline" rows="2" class="from-control special"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="buttonText">Button text:</label>
+                <input type="text" class="form-control special" id="buttonText" value="">
+            </div>
+            <div class="form-group colors">
+                <label for="buttonColor">Button color:</label>
+                <div id="buttonColor">
+                    <div class="color-picks clearfix colorHolder">
+                        {{#each colors}}
+                            <input type="radio" name="buttonColor" class="color-pick" value="{{this}}">
+                            <a class="color-picking"><i class="fa fa-check" style="background: {{this}}"></i></a>
+                        {{/each}}
+
+                        <div class="colorSelector pull-right" style="width: 101px; margin-top: -5px;">
+                            <input type="radio" name="buttonColor" class="color-pick" value="#FFFFFF">
+                            <a class="color-picking color-holder"><i class="fa fa-check" style="background: #FFFFFF; margin-top: 5px;"></i></a>
+                            <span class="color-picking no-color-holder">#FFFFFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group colors">
+                <label for="backgroundColor">Background color:</label>
+                <div id="backgroundColor">
+                    <div class="color-picks clearfix colorHolder">
+                        {{#each colors}}
+                            <input type="radio" name="backgroundColor" class="color-pick" value="{{this}}">
+                            <a class="color-picking"><i class="fa fa-check" style="background: {{this}}"></i></a>
+                        {{/each}}
+
+                        <div class="colorSelector pull-right" style="width: 101px; margin-top: -5px;">
+                            <input type="radio" name="backgroundColor" class="color-pick" value="#FFFFFF">
+                            <a class="color-picking color-holder"><i class="fa fa-check" style="background: #FFFFFF; margin-top: 5px;"></i></a>
+                            <span class="color-picking no-color-holder">#FFFFFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <span class="beforeSelector"><span id="opacity"></span>% opacity</span>
+                <div class="sliderWidget" id="opacitySlider"></div>
+            </div>
+            <div class="form-group">
+                <label for="emailServiceProvider">Email service provider:</label>
+                <select id="emailServiceProvider" class="form-control special">
+                    {{#each emailProviders}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6 column">
+            <div class="clearfix preview-wrapper">
+                <div class="col-md-12 column thumbnail-wrapper">
+                    <img src="{{thumbnail}}" alt="" class="col-md-12 column popup-thumbnail pushOver">
+                    <div class="compaig-wrapper previewLead" id="previewLead">
+                        <div class="background"></div>
+                        <div class="headline"></div>
+                        <div class="subheadline"></div>
+                        <div class="form">
+                            <input type="text" class="form-name" placeholder="Your name" value="">
+                            <input type="text" class="form-email" placeholder="Your mail" value="">
+                            <button type="submit" class="button" value=""></button>
+                        </div>
+                        <div class="skip">skip</div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix top2 select_range_wrapper">
+                CTA button will appear at
+                <div class="select_range">
+                    <input class="select_value" id="timeStart" type="text" value="" data-toggle="dropdown">
+                    <div class="dropdown-menu" aria-labelledby="timeStart">
+                        <div class="sliderWidget" id="timeStartSlider"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix top2">
+                <div class="col-md-6 column" style="padding: 0">
+                    <input type="checkbox" class="special" id="displayOnPause"><label for="displayOnPause"><span></span><span>Display if video is paused</span></label>
+                </div>
+                <div class="col-md-6 column" style="padding: 0">
+                    <input type="checkbox" class="special" id="allowSkip"><label for="allowSkip"><span></span><span>Allow skip</span></label>
+                </div>
+                <div class="col-md-6 column" style="padding: 0">
+                    <input type="checkbox" class="special" id="askNames"><label for="askNames"><span></span><span>Ask for their names</span></label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 column top2">
+            <input class="btn btn-lg btn-danger submitMarketing" id="addCompaign" type="button" value="Add campaign to video">
+        </div>
+    </div>
+</div>

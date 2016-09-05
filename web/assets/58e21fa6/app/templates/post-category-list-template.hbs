@@ -1,0 +1,55 @@
+{{!
+barge
+checkbox
+checked
+desc
+id
+inode
+label
+last_modified
+open
+parent
+parent_id
+posts_count
+radio
+trashed
+}}
+
+
+<td class="category-checkbox">
+    <input type="checkbox" name="selection[]" value="{{ id }}">
+</td>
+
+<td class="category-name" >
+    <div class="cat-edit" data-id="{{ id }}">{{ label }}</div>
+    <div class="category-links" >
+        {{#ifNotCond parent_id -1}}
+        <a href="#edit" class="cat-edit" data-id="{{ id }}" >Edit</a> &bull;
+        <a href="#trash" class="cat-trash {{#if trashed}}trashed{{/if}}" data-id="{{ id }}" >{{#if trashed}}Untrash{{else}}Trash{{/if}}</a> &bull;
+        {{/ifNotCond}}
+        <a href="#view" class="cat-view" data-id="{{ id }}" >View</a>
+    </div>
+
+</td>
+
+<td class="category-description">
+    {{ desc }}
+</td>
+
+<td class="category-barge">
+    {{#unless barge }}
+        <span class="author-image" style="background-color: #5ea9f7" data-label="{{ label }}"> {{firstСharacter label }} </span>
+    {{else}}
+        <span class="author-image" style="">
+            <img src="{{ barge }}" alt="" width="30" height="30" />
+        </span>
+    {{/unless}}
+</td>
+
+<td class="category-parent">
+    <div class="category-parent-wp" >
+        <span class="first-letter" data-parent="{{ parent }}" style="{{ randomBackgroundColor }}">{{firstСharacter parent }}</span>
+    </div>
+</td>
+
+<td class="category-posts-count">{{ posts_count }}</td>

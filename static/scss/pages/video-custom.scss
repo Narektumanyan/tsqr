@@ -1,0 +1,181 @@
+.custom-rois {
+  display: none;
+  padding: 20px;
+
+  .video-js & {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .custom-roi {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+  }
+
+  .compaig-wrapper {
+    pointer-events: all;
+  }
+
+  .compaig-lead {
+    .background {
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+    }
+    .headline {
+      position: relative;
+      color: #fff;
+      font-size: 42px;
+      font-style: normal;
+      margin: 10px 0 6px;
+    }
+    .subheadline {
+      position: relative;
+      color: #b5cfd8;
+      font-size: 16px;
+      line-height: 1.5;
+      font-style: italic;
+      white-space: pre-line;
+      overflow: hidden;
+      height: 48px;
+    }
+    .skip {
+      display: inline-block;
+      position: relative;
+      color: rgb(181, 207, 216);
+      margin-top: 20px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .form {
+      position: relative;
+      margin-top: 20px;
+      word-spacing: 6px;
+
+      input {
+        padding: 0 10px;
+        background-image: none;
+        outline: 0 !important;
+        border: 1px solid #ecf1f2;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        font-size: 12px;
+        border-radius: 5px !important;
+        min-height: 35px;
+        background-color: #fff;
+        color: #333;
+        width: 210px;
+        transition: none;
+      }
+
+      .button {
+        border: none;
+        padding: 8px 20px;
+        cursor: pointer;
+      }
+
+      .form-name {
+        display: none;
+      }
+
+      &.with-name {
+        input {
+          width: 100px;
+        }
+        .form-name {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+   .button {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    color: #FFF !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 12px 30px;
+    font-size: 14px;
+    line-height: 1.4;
+    border-radius: 6px;
+    user-select: none;
+    box-shadow: none !important;
+    transition: background-color 0.15s, border-color 0.15s, opacity 0.15s;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .compaig-annotation {
+    position: relative;
+    .text {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .annotation {
+      border-radius: 5px;
+      padding: 15px;
+      background: #ffffff;
+      float: left;
+      z-index: 60;
+      position: absolute;
+      padding-right: 30px;
+      top: 60%;
+      font-size: 14px;
+      color: #999;
+      zoom: 1;
+      transition: background-color 0.15s;
+
+      .closeAnnotation {
+        cursor: pointer;
+        position: absolute;
+        top: 4px;
+        right: 10px;
+        font-size: 24px;
+        color: #ecf1f2;
+        text-decoration: none;
+        line-height: 1;
+      }
+    }
+  }
+
+  .compaig-cta {
+    position: relative;
+    .cta {
+      zoom: 1;
+      display: inline-block;
+      position: absolute;
+      border-radius: 6px;
+      transition: background-color 0.15s;
+    }
+    .button {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.vjs-control-bar {
+  z-index: 2;
+}

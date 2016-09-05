@@ -1,0 +1,21 @@
+<div class="link-conteiner">
+    <div class="post-video">
+        {{!<img src="https://i.ytimg.com/vi/cRU9BT9M9Iw/hqdefault.jpg" class="thumbnail">}}
+        <img src="{{ video_image_url }}" class="thumbnail">
+    </div>
+    <div class="post-description">
+        <div class="post-title"> {{{title}}}</div>
+        <div class="post-content">
+            {{{content}}}
+        </div>
+    </div>
+    <div class="post-link">
+        {{#if linked}}
+            <span class="chain"></span>
+            <!--<i class="fa fa-link"></i>-->
+        {{else}}
+            <span class="chain-broken"><i class="fa fa-unlink"></i></span>
+            <!--<i class="fa fa-unlink"></i>-->
+        {{/if}}
+    </div>
+</div>

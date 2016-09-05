@@ -1,0 +1,111 @@
+$btn_c_gray : #BAC4C5;
+$btn_c_pink : #FF256C;
+$btn_c_white : #FFFFFF;
+
+.app-btn-default {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border: 2px solid $btn_c_gray;
+	color: $btn_c_gray;
+	border-radius: 30px;
+	font-weight: 600;
+	padding: 4px 14px 4px 16px;
+	display: inline-block;
+	background: #FFFFFF;
+	font-family: 'Open Sans', sans-serif;
+	outline: none;
+	vertical-align: middle;
+	cursor: pointer;
+	&:hover {
+		color: $btn_c_white!important;
+		background: $btn_c_gray!important;
+		text-decoration: none;
+	}
+	&.pink {
+		color: $btn_c_pink!important;
+		border-color: $btn_c_pink!important;
+		&:hover {
+			color: $btn_c_white!important;
+			background: $btn_c_pink!important;
+		}
+	}
+	&.pinkbg {
+		color: $btn_c_white!important;
+		background: $btn_c_pink!important;
+		border-color: $btn_c_pink!important;
+		&:hover {
+			background: $btn_c_gray!important;
+			border-color: $btn_c_gray!important;
+		}
+	}
+}
+button.app-btn-default {
+	height: 40px;
+	box-sizing: border-box;
+}
+
+.app-btn-round {
+	width: 38px;
+	height: 38px;
+	border-radius: 19px;
+	display: inline-block;
+	background: $btn_c_gray;
+	border: 2px solid $btn_c_gray;
+	font-size: 15px;
+	vertical-align: middle;
+	&.pink {
+		background-color: $btn_c_pink!important;
+		border-color: $btn_c_pink!important;
+		color: $btn_c_white!important;
+	}
+}
+
+.app-btn-round.min {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	display: inline-block;
+	background: $btn_c_white;
+	border: 1px solid $btn_c_gray;
+	font-size: 15px;
+	vertical-align: middle;
+	text-align: center;
+	box-sizing: border-box;
+	&.cancel {
+		color: $btn_c_gray;
+		padding: 2px 0;
+    	line-height: 1em;
+		&:after {
+			content: "×";
+		}
+	}
+	&.gray {
+		&:hover {
+			border-color: $btn_c_pink!important;
+			color: $btn_c_pink!important;
+		}
+	}
+}
+
+.loader-big {
+	display: block;
+	width: 64px;
+	height: 64px;
+	z-index: 5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -32px;
+	margin-left: -32px;
+	background: url('./images/loader.GIF') no-repeat;
+}
+
+hr.dashed {
+	height: 0;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-bottom: 2px dashed #EEF3F4;
+}

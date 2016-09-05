@@ -1,0 +1,31 @@
+<div class="video-item {{type}}" >
+    <div class="video-item-inner">
+        <div class="video-thumbnail-container" style="{{randomBackgroundColor}}">
+            <a href="/site/channelvideos?channel_type={{type}}&channel_id={{id}}">
+                <div class="video-thumbnail"
+                 style="background:  url({{image}}) center center no-repeat;">{{#unless image}}{{firstСharacter title}}{{/unless}}</div>
+            </a>
+        </div>
+        <div class="info">
+            <div class="title">
+                <a href="/site/channelvideos?channel_type={{type}}&channel_id={{id}}">{{title}}</a>
+            </div>
+            <div class="statistic">
+                {{ statistic.lastActivity }} &bull; {{ formatCommDelimiter statistic.videoCount }} videos
+            </div>
+            <div class="description">
+                {{description}}
+            </div>
+
+        </div>
+    </div>
+    <div class="button-like">
+        {{#if followed}}
+            <a class="following followed">Following</a>
+        {{else}}
+            <a class="following">Follow</a>
+        {{/if}}
+
+    </div>
+
+</div>

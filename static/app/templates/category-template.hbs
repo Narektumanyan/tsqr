@@ -1,0 +1,23 @@
+<div class="category-banner-wp">
+    <div class="category-banner" style="background: url('{{#if retina}}{{ imgs.retina }}{{else}}{{ imgs.normal }}{{/if}}') -5px -5px no-repeat;"></div>
+    <div class="info">
+        <a class="back-to-category-list" href="/site/explore">{{!<i class="fa fa-long-arrow-left"></i>}}<span class="arrow-back"></span>Categories</a>
+        <h3 class="title">{{ nameCat }}</h3>
+    </div>
+</div>
+<div class="video-list-controls">
+    <!--<div class="btn-group">-->
+        <!--<i class="my-sort-icon desc"></i>-->
+        <!--<button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+            <!--Popular<span class="caret"></span>-->
+        <!--</button>-->
+        <!--<ul class="dropdown-menu">-->
+            <!--<li><a href="#">Popular</a></li>-->
+            <!--<li><a href="#">Date</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+</div>
+<div class="list"></div>
+<div class="text-center {{#if gettingIsStop}}hidden{{/if}}">
+    <img src="/preloader.gif"/>
+</div>

@@ -1,0 +1,44 @@
+<span class="post-page-label">Tags</span>
+<input type="text" class="input-post-tags" data-role="tagsinput" style="display: none;" placeholder="Add tag" value="{{ postInformationTags }}">
+
+<div class="related-post-block">
+    <span class="post-page-label">Related posts</span>
+    <label class="customize-switcher">
+        <input name="switch-field-1" class="ace ace-switch ace-switch-6" type="checkbox"  {{#if postInformationShowRelated }} checked="checked" {{/if}}>
+        <span class="lbl" data-lbl=""></span>
+    </label>
+    <a class="relations-popup">Customize</a>
+</div>
+
+<div class="categories-block">
+    <span class="post-page-label">Post categories</span><span class="post-add-category">Add new</span>
+    <div>
+        <div id="tree" class="aciTree aciTree0 categories-wp">
+            <div class="cat" data-id="0">
+                <div class="cat-checkbox-wp">
+                    <span class="my-checked-on fa fa-check-square" style="display: none;"></span>
+                    <span class="my-checked-off fa fa-square-o" style="display: inline-block;"></span>
+                    <input type="checkbox" checked="checked" style="display: none;"/>
+                </div>
+                <span class="cat-icon" style="{{randomBackgroundColor}}">G</span>
+                <span class="cat-title">General</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cat-buttons">
+
+    <form action="{{additinonalInfo.route}}" id="post-publish">
+        <input name='relations' id='post-publish-relations' type="hidden">
+        <input name='selectedCategories' id='post-publish-selected-categories' type="hidden">
+        <input name='tags' id='post-publish-tags' type="hidden">
+        <input type="hidden" name="{{additinonalInfo.csrf.param}}"
+               value="{{additinonalInfo.csrf.tocken}}"/>
+        <input type="hidden" name="show_related" id="post-publish-show_related" value=""/>
+        <input type="hidden" name="related_headline" value="{{additinonalInfo.post.related_headline}}"/>
+        {{! <input type="hidden" name="video_image" id="video_url" value=""/> }}
+        <input id='post-publish-submit' type="submit" class="btn" value="Publish">
+    </form>
+    <a href="/post/index" class="post-close">Close</a>
+</div>
