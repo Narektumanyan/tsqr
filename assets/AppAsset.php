@@ -15,17 +15,17 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-	public $sourcePath = '@app/static';
-	public $baseUrl = '@web';
-	public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+    public $sourcePath = '@app/static';
+    public $baseUrl = '@web';
+    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 
-	public $css = [
+    public $css = [
         'js/dante/dist/css/dante-editor.css',
         //		'css/ace-fonts.css',
         //		'css/ace-ie.css',
 
-		'css/bootstrap.css',
-		'css/ace.css',
+        'css/bootstrap.css',
+        'css/ace.css',
 
         //		'css/ace.onpage-help.css',
         //		'docs/assets/js/themes/sunburst.css',
@@ -33,16 +33,17 @@ class AppAsset extends AssetBundle
 //        'css/site.min.css',
         'css/site.css',
         'css/jquery-ui.custom.css',
+        'css/tag-basic-style.css',
 
-    //		'css/aciTree.css',
+        //		'css/aciTree.css',
 
         'js/cropper/cropper.min.css',
         'js/cropper/main.css',
-	];
-	public $js = [
+    ];
+    public $js = [
         'js/dante/dist/js/dante-editor.js',
 
-		'js/handlebars-heplers.js',
+        'js/handlebars-heplers.js',
 
         //		'js/ace-extra.js',
         //		'js/ace-elements.js',
@@ -54,11 +55,11 @@ class AppAsset extends AssetBundle
         //		'docs/assets/js/language/css.js',
         //		'docs/assets/js/language/javascript.js',
 
-		"js/jquery-ui.custom.js",
-		"js/bootstrap.js",
-		"js/jquery.ui.touch-punch.js",
-		"js/jquery.easypiechart.js",
-		"js/jquery.sparkline.js",
+        "js/jquery-ui.custom.js",
+        "js/bootstrap.js",
+        "js/jquery.ui.touch-punch.js",
+        "js/jquery.easypiechart.js",
+        "js/jquery.sparkline.js",
 
 //        		"js/flot/jquery.flot.js",
 //        		"js/flot/jquery.flot.pie.js",
@@ -104,17 +105,18 @@ class AppAsset extends AssetBundle
         'js/bootstrap-select/bootstrap-select.js',
         'js/cropper/cropper.min.js',
 
-		'js/module.js',
+        'js/module.js',
 //		'js/module.min.js',
 
-		'js/templates.js',
-		'js/postVideo.js',
+        'js/templates.js',
+        'js/postVideo.js',
 
         'js/layout/layout.js',
-	];
-	public $depends = [
-		'yii\web\YiiAsset',
-		'app\assets\BowerAsset'
-	];
+        'js/tagging.min.js',
+    ];
+    public $depends = [
+        'yii\web\YiiAsset',
+        'app\assets\BowerAsset'
+    ];
 
 }

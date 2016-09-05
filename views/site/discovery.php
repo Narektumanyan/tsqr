@@ -72,7 +72,7 @@ use yii\helpers\Html;
         }
 
         $activeExplore = ((trim( str_replace("/index", "", Url::to('')), "/") != "" &&
-            strpos('site/explore', trim( str_replace("/index", "", Url::to('')), "/")) !== false) ||
+                strpos('site/explore', trim( str_replace("/index", "", Url::to('')), "/")) !== false) ||
             strpos(trim( str_replace("/index", "", Url::to('')), "/"), 'site/videosearch' ) !== false) ? true : false;
 
         $activeExplore = (bool)(Yii::$app->controller->id == "site" &&
@@ -168,7 +168,7 @@ use yii\helpers\Html;
     ?>
 
     <div class="pocket"></div>
-    
+
 </div>
 
 <style type="text/css">
@@ -225,7 +225,7 @@ use yii\helpers\Html;
 </style>
 
 <div id="setupBlog" class="bim-wrapper onlyupload" style="display: none">
-    <div class="bim-modal bim-modal--open" style="opacity: 1;">
+    <div class="bim-modal bim-modal--open" style="opacity: 1; min-height: 470px; height: auto;">
         <span class="modal-close"></span>
         <div class="modal-media-title">Howdy! Let's get started by creating your personal blog</div>
         <hr class="blog-line" />
@@ -233,58 +233,56 @@ use yii\helpers\Html;
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-3 col-sm-offset-0">
-                  <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="text" class="form-control blogCreateInput" id="inputEmail3" placeholder="Name">
                 </div>
                 <div class="col-sm-3">
-                    <span>.trendsquare.com</span>
+                    <span class="blogCreatePostfix">.trendsquare.com</span>
                 </div>
                 <div class="col-sm-3">
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label for="inputEmail4" class="col-sm-2 control-label">Title</label>
                 <div class="col-sm-9 col-sm-offset-0">
-                  <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+                    <input type="text" class="form-control blogCreateInput" id="inputEmail4" placeholder="Title">
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label for="inputEmail4" class="col-sm-2 control-label">Description</label>
                 <div class="col-sm-9 col-sm-offset-0">
-                    <textarea class="form-control" rows="3"></textarea>
+                    <textarea class="form-control blogCreateInput" id="blogCreateInputArea" rows="3"></textarea>
                 </div>
             </div>
-            
+
             <div class="form-group">
-                <label for="inputEmail4" class="col-sm-2 control-label">Tags</label>
-                
-                <div id="blogTags" class="col-sm-5">
+                <label for="inputEmail4" class="col-sm-2 control-label" id="blogTagLabel">Tags</label>
+
+                <div id="blogTags" class="col-sm-9">
+                    <div data-tags-input-name="tag" id="tagBox"></div>
                 </div>
-                
-                <div class="col-sm-1">
-                    <button title="" class="inline-btn ctrl blog-add-tag"> <span class="tooltip-icon icon-plus"></span> </button>
-                </div>
-                
-                <div class="col-sm-3 col-sm-offset-0">
-                    <div class="input-group blog-add-tag-input" style="display: none" >
-                        <input type="text" class="form-control" id="blogTagName" placeholder="Tag name">
-                    </div>
-                </div>
+
             </div>
-            <br>
-            <div class="form-group">
+
+            <div class="form-group" id="blogCreateControls">
                 <div class="action-buttons-panel text-right">
                     <button class="app-btn-default pink action-add">Create</button>
                     <button class="app-btn-default action-cancel">Cancel</button>
                 </div>
             </div>
+            <br>
+            <br>
         </form>
     </div>
 </div>
 
 <script type="text/javascript">
+
+    $("#tagBox").tagging("emptyInput");
+
     $(document).ready(function() {
+
         $('.setup-blog').bind('click', function(e) {
             console.log('aaaaa');
             e.preventDefault();
@@ -297,16 +295,16 @@ use yii\helpers\Html;
             } else {
                 e.stopPropagation();
             }
-        })
-        
+        });
+        $('.modal-close, .action-cancel').bind('click', function(e){
+            $('.bim-wrapper').fadeOut(200);
+        });
+
+
         $('.blog-add-tag').bind('click', function(e) {
             e.preventDefault();
             $('.blog-add-tag-input').fadeIn();
         });
-        
-        $('#blogTagName').bind('change', function() {
-            $('#blogTags').append('<div class="added-tag">'+ $(this).val() +' <i aria-hidden="true" class="del-blog-tag fa fa-times fa-1"></i></div>').hide().fadeIn();
-            $(this).val('');
-        });
+
     });
 </script>
