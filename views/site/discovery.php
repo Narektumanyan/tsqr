@@ -2,6 +2,8 @@
 use yii\helpers\Url;
 use yii\widgets\Menu;
 use yii\helpers\Html;
+
+use yii\widgets\ActiveForm;
 ?>
 <?
 //echo"<pre>";
@@ -172,7 +174,7 @@ use yii\helpers\Html;
 </div>
 
 <style type="text/css">
-    .visib{
+/*    .visib{
         display: block;
     }
     hr.blog-line {
@@ -222,6 +224,20 @@ use yii\helpers\Html;
     .del-blog-tag {
         cursor: pointer;
     }
+    .name-taken{
+        line-height: 42px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .get-error-message {
+        color: darkred;
+        font-size: 18px;
+        height: 31px;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        z-index: 999;
+    }*/
 </style>
 
 <div id="setupBlog" class="bim-wrapper onlyupload" style="display: none">
@@ -229,16 +245,26 @@ use yii\helpers\Html;
         <span class="modal-close"></span>
         <div class="modal-media-title">Howdy! Let's get started by creating your personal blog</div>
         <hr class="blog-line" />
-        <form id="blogForm" class="form-horizontal" role="form">
+        <form id="blogForm" class="form-horizontal" role="form" action="/blog/create" method="POST">
+            <?php 
+//            $form = ActiveForm::begin([
+//                'id' => 'blogForm',
+//                'method' => 'post',
+//                'action' => '/blog/create',
+//                'options' => ['class' => 'form-horizontal'],
+//            ]); 
+            ?>
             <div class="form-group">
                 <label for="inputBlogName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-3 col-sm-offset-0">
+                    <?php // echo $form->field($blogModel, 'name')->textInput(['class' => 'aaaa form-control blogCreateInput', 'id' => 'inputBlogName', 'placeholder' => 'Name'])->label(false) ?>
                     <input name="Blog[blog-name]" type="text" class="form-control blogCreateInput" id="inputBlogName" placeholder="Name">
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <span class="blogCreatePostfix">.trendsquare.com</span>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
+                    <div class="name-taken"></div>
                 </div>
             </div>
 
@@ -273,6 +299,8 @@ use yii\helpers\Html;
             </div>
             <br>
             <br>
+            
+        <?php // ActiveForm::end(); ?>    
         </form>
     </div>
 </div>
@@ -297,6 +325,7 @@ use yii\helpers\Html;
             }
         });
         $('.modal-close, .action-cancel').bind('click', function(e){
+            e.preventDefault();
             $('.bim-wrapper').fadeOut(200);
         });
 
@@ -308,15 +337,31 @@ use yii\helpers\Html;
         
         
         $('#inputBlogName').bind('change', function() {
+            
             $.ajax({
                 url: '/blog/checkname',
                 method: 'POST',
                 dataType: 'JSON',
                 data: { blogName: $(this).val() },
                 success: function(response) {
-                    console.log(response);
+                    if(response.success == 0) {
+                        $('.name-taken').addClass('text-danger').text(response.error);
+                    } else if(response.success == 1) {
+                        $('.name-taken').removeClass('text-danger').addClass('text-success').text(response.message);
+                    }
                 }
             });
+        });
+        
+        $('#blogForm').bind('submit', function() {
+            if($('#inputBlogName').val() == '') {
+                alert('Please fill in the fields!');
+                return false;
+            }
+        })
+        
+        $('button.close').click(function() {
+            $(this).parent().fadeOut();
         })
         
 

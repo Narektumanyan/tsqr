@@ -536,9 +536,19 @@ AppAsset::register($this);
     <!--</div>-->
 
     <!-- /section:basics/sidebar.horizontal -->
+    
+    
+    
     <div class="main-content-inner">
     <!--    <div class="page-content"> -->
             <!-- #section:settings.box -->
+            <?php if( Yii::$app->session->hasFlash('error') ): ?>
+                <div class="get-error-message bg-danger">
+                    <?php echo Yii::$app->session->getFlash('error') ?>
+                    <button class="close" type="button" aria-hidden="true">×</button>
+                </div>
+            <?php endif; ?>
+            
             <?= $content ?>
     <!--    </div> <!-- /.page-content -->
     </div><!-- /.main-content -->

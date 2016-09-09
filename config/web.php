@@ -34,6 +34,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'user/login' => 'site/login',
+                'http://<subdomain:\w+>.trend.loc' => 'blog/index',
 //                'user/<controller:\w+>/<action:\w+>' => 'user/<controller>/<action>',
                 'PUT <controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
@@ -117,8 +118,8 @@ if (YII_ENV_DEV) {
 //    $config['bootstrap'][] = 'debug';
 //    $config['modules']['debug'] = 'yii\debug\Module';
 //
-//    $config['bootstrap'][] = 'gii';
-//    $config['modules']['gii'] = 'yii\gii\Module';
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = 'yii\gii\Module';
 }
 
 return $config;

@@ -29,16 +29,30 @@ class Blog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'title', 'description', 'create_date'], 'required'],
+            [['name', 'title', 'description'], 'required'],
             [['description'], 'string'],
-            [['create_date'], 'integer'],
-            ['create_date', 'default', 'value' => time()],
+            [['create_date', 'user_id'], 'integer'],
             [['name'], 'string', 'max' => 150],
             [['title'], 'string', 'max' => 255],
             [['name'], 'unique']
         ];
     }
 
+    public function beforeSave($insert) {
+        
+        if(parent::beforeSave($insert)) {
+            
+            if( $insert ) {
+                $this->create_date = time();
+                $this->user_id = \Yii::$app->user->id;
+            }
+        
+            return true;
+        }
+        
+        return false;
+    }
+    
     /**
      * @inheritdoc
      */
@@ -50,6 +64,7 @@ class Blog extends \yii\db\ActiveRecord
             'title' => 'Title',
             'description' => 'Description',
             'create_date' => 'Create Date',
+            'user_id' => 'User ID',
         ];
     }
 }

@@ -10,6 +10,7 @@ use dektrium\user\controllers\SecurityController;
 use dektrium\user\Finder;
 
 use app\models\Blog;
+use app\models\BlogTags;
 
 class BlogController extends SecurityController
 {
@@ -36,7 +37,8 @@ class BlogController extends SecurityController
             ];
     }
     
-    public function actionCheckname() {
+    public function actionCheckname()
+    {
         
         $post = Yii::$app->request->post();
         
@@ -45,9 +47,64 @@ class BlogController extends SecurityController
         $result = Blog::find()->where(['name' => $name])->one();
         
         if( $result ) {
-            json_encode(['success' => 1, 'error' => 'Sorry, this name is already taken!']);
-        } 
+            echo json_encode(['success' => 0, 'error' => 'Sorry, this name is already taken!']);
+        } else {
+            echo json_encode(['success' => 1, 'message' => 'Accepted!']);
+        }
 //        dbg($result);
+    }
+    
+    
+    public function actionCreate()
+    {
+        $post = Yii::$app->request->post();
+        
+        if( isset($post['Blog']) ) {
+            
+            $blogData = $post['Blog'];
+            
+            $blogModel = new Blog();
+        
+            $blogModel->name = $blogData['blog-name'];
+            $blogModel->title = $blogData['blog-title'];
+            $blogModel->description = $blogData['blog-descr'];
+            
+            if( $blogModel->save() ){
+                
+                if( isset($post['tag']) ) {
+            
+                    $tagData = $post['tag'];
+
+                    $columns = ['blog_id', 'tag_name'];
+                    $rows = [];
+                    foreach($tagData as $item) {
+                        $rows[] = [$blogModel->id, $item];
+                    }
+                    
+                    if( !empty($rows) ) {
+                        Yii::$app->db->createCommand()->batchInsert('blog_tags', $columns, $rows)->execute();
+                    }
+                }
+                
+                return $this->goHome();
+            } else {
+                
+                Yii::$app->session->setFlash('error', 'Something went wrong! Please try again!');
+                return $this->goHome();
+            }
+            
+        } else {
+            
+            Yii::$app->session->setFlash('error', 'Something went wrong! Please try again!');
+            return $this->goHome();
+        }
+    }
+    
+    
+    public function actionIndex() 
+    {
+//        echo 11111;
+        return $this->render('index');
     }
 }
 

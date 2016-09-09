@@ -1,0 +1,209 @@
+
+/****** Set up Blog Popup *******/
+
+.visib{
+        display: block;
+    }
+    hr.blog-line {
+        border-bottom: 2px dashed #edf3f4;
+        border-top: medium none;
+    }
+    .inline-btn.ctrl {
+        transform: rotate(0deg);
+        transition: transform 100ms ease 0s, border-color 100ms ease 0s, color 100ms ease 0s;
+    }
+    .inline-btn {
+        background: transparent none repeat scroll 0 0;
+        border: 1px solid rgba(0, 0, 0, 0.44);
+        border-radius: 999em;
+        box-sizing: border-box;
+        color: rgba(0, 0, 0, 0.44);
+        cursor: pointer;
+        display: inline-block;
+        font-family: "jaf-bernino-sans","Open Sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+        font-feature-settings: "liga";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        height: 32px;
+        letter-spacing: -0.02em;
+        line-height: 32px;
+        outline: 0 none;
+        padding: 0;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-rendering: optimizelegibility;
+        transition: border-color 100ms ease 0s, color 100ms ease 0s;
+        vertical-align: bottom;
+        white-space: nowrap;
+        width: 32px;
+    }
+    .added-tag {
+        background: #eef4f4 none repeat scroll 0 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        padding: 1px;
+    }
+    .del-blog-tag {
+        cursor: pointer;
+    }
+    .name-taken{
+        line-height: 42px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .get-error-message {
+        color: darkred;
+        font-size: 18px;
+        height: 31px;
+        position: fixed;
+        text-align: center;
+        width: 100%;
+        z-index: 999;
+    }
+
+
+/****** Blog *******/
+
+.wrapper-blog{
+    overflow-x: hidden;
+    margin-top: 100px;
+}
+.row{
+    margin-bottom: 10px;
+}
+.brd{
+    border: 1px solid #000;
+}
+.profile-menu-list{
+    list-style-type: none;
+    padding-left: 15px;
+}
+.profile-menu-title{
+    color: #BBC3C5;
+    padding-left: 0;
+}
+.user-icon{
+    margin-right: 10px;
+}
+.profile-menu-block{
+    margin-top: 30px;
+}
+.profile-img img{
+    border-radius: 50px;
+    width: 80px;
+}
+
+.add-new{
+    background: white;
+    border-radius: 43px;
+    color: #FD3768;
+    font-size: 16px;
+    text-align: center;
+    padding: 6px;
+    width: 115px;
+    border: 2px solid #FD3768;
+}
+.profile-add-new{
+    cursor: pointer;
+}
+.profile-add-new:hover{
+    background: #FD3768;
+    color: white;
+}
+.blog-screenshot{
+    padding-top: 5px;
+}
+.blog-screenshot img{
+    width: 100%;
+    height: 90px;
+}
+.blog-screenshot-div{
+    border: 1px solid #EEF4F4;
+    padding: 23px 12px 23px 12px;
+    margin-bottom: 20px;
+}
+.blog-screenshot-div p{
+    margin: 0 0 2px 0;
+}
+.blog-divs{
+    padding-right: 10px;
+    min-height: 1000px;
+}
+
+.left-brd{
+    border-left: 1px dotted gray;
+}
+.active, .input-title{
+    font-weight: 600;
+}
+.pink-text{
+    color: #FD3768 !important;
+}
+.gray-text{
+    color: lightgrey !important;
+}
+
+
+/**** My Profile *****/
+
+.image-block{
+    width: 55%;
+    display: inline-block;
+    padding-top: 15px;
+    float: left;
+    height: 90px;
+}
+.image-block-checkbox{
+    float: left;
+}
+.profile-img-div{
+    width: 30%;
+    display: inline-block;
+    float: left;
+}
+.profile-input{
+    width: 90%;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    border: 1px solid lightgrey;
+}
+.save-changes{
+    background: white;
+    border-radius: 43px;
+    color: #FD3768;
+    font-size: 20px;
+    text-align: center;
+    padding: 7px;
+    width: 200px;
+    border: 2px solid #FD3768;
+}
+.profile-save-changes{
+    margin-top: 40px;
+    cursor: pointer;
+}
+.profile-save-changes:hover{
+    background: #FD3768;
+    color: white;
+}
+.timezone-margin{
+    margin-top: 8px;
+}
+.left-brd{
+    border-left: 1px dotted gray;
+    min-height: 1000px;
+}
+.active, .input-title{
+    font-weight: 600;
+}
+.pink-text{
+    color: #FD3768 !important;
+}
+.gray-text{
+    color: gray !important;
+}

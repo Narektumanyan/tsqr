@@ -32,6 +32,8 @@ class AppAsset extends AssetBundle
 
 //        'css/site.min.css',
         'css/site.css',
+        
+        'css/custom.css',
         'css/jquery-ui.custom.css',
         'css/tag-basic-style.css',
 
