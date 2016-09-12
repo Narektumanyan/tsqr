@@ -2,69 +2,69 @@
 /****** Set up Blog Popup *******/
 
 .visib{
-        display: block;
-    }
-    hr.blog-line {
-        border-bottom: 2px dashed #edf3f4;
-        border-top: medium none;
-    }
-    .inline-btn.ctrl {
-        transform: rotate(0deg);
-        transition: transform 100ms ease 0s, border-color 100ms ease 0s, color 100ms ease 0s;
-    }
-    .inline-btn {
-        background: transparent none repeat scroll 0 0;
-        border: 1px solid rgba(0, 0, 0, 0.44);
-        border-radius: 999em;
-        box-sizing: border-box;
-        color: rgba(0, 0, 0, 0.44);
-        cursor: pointer;
-        display: inline-block;
-        font-family: "jaf-bernino-sans","Open Sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
-        font-feature-settings: "liga";
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        height: 32px;
-        letter-spacing: -0.02em;
-        line-height: 32px;
-        outline: 0 none;
-        padding: 0;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        text-rendering: optimizelegibility;
-        transition: border-color 100ms ease 0s, color 100ms ease 0s;
-        vertical-align: bottom;
-        white-space: nowrap;
-        width: 32px;
-    }
-    .added-tag {
-        background: #eef4f4 none repeat scroll 0 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        display: inline-block;
-        margin-right: 5px;
-        margin-bottom: 5px;
-        padding: 1px;
-    }
-    .del-blog-tag {
-        cursor: pointer;
-    }
-    .name-taken{
-        line-height: 42px;
-        font-weight: bold;
-        font-size: 16px;
-    }
-    .get-error-message {
-        color: darkred;
-        font-size: 18px;
-        height: 31px;
-        position: fixed;
-        text-align: center;
-        width: 100%;
-        z-index: 999;
-    }
+    display: block;
+}
+hr.blog-line {
+    border-bottom: 2px dashed #edf3f4;
+    border-top: medium none;
+}
+.inline-btn.ctrl {
+    transform: rotate(0deg);
+    transition: transform 100ms ease 0s, border-color 100ms ease 0s, color 100ms ease 0s;
+}
+.inline-btn {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid rgba(0, 0, 0, 0.44);
+    border-radius: 999em;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.44);
+    cursor: pointer;
+    display: inline-block;
+    font-family: "jaf-bernino-sans","Open Sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-feature-settings: "liga";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    height: 32px;
+    letter-spacing: -0.02em;
+    line-height: 32px;
+    outline: 0 none;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: optimizelegibility;
+    transition: border-color 100ms ease 0s, color 100ms ease 0s;
+    vertical-align: bottom;
+    white-space: nowrap;
+    width: 32px;
+}
+.added-tag {
+    background: #eef4f4 none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 1px;
+}
+.del-blog-tag {
+    cursor: pointer;
+}
+.name-taken{
+    line-height: 42px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.get-error-message {
+    color: darkred;
+    font-size: 18px;
+    height: 31px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+}
 
 
 /****** Blog *******/
@@ -195,7 +195,7 @@
     margin-top: 8px;
 }
 .left-brd{
-    border-left: 1px dotted gray;
+    border-left: 2px dashed #eff4f4;
     min-height: 1000px;
 }
 .active, .input-title{
@@ -206,4 +206,16 @@
 }
 .gray-text{
     color: gray !important;
+}
+
+.image-actions{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 16px;
+    height: 16px;
+    background: url("/images/image_library/button-actions.png") center no-repeat;
+    background-size: 4px 16px;
+    cursor: pointer;
 }

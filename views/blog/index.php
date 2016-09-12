@@ -118,43 +118,30 @@
                 <!--Block template-->
                 <div class="col-md-5 col-md-offset-1 blog-screenshot-div">
                     <div class="col-md-4 blog-screenshot">
-                        <img src="http://img.informer.com/screenshots/2941/2941717_2.jpg" alt="Screenshot">
+                        <a href="#"><img src="http://img.informer.com/screenshots/2941/2941717_2.jpg" alt="Screenshot"></a>
                     </div>
                     <div class="col-md-7">
-                        <p>Emi.Trendsquare.com</p>
+                        <p><a href="#">Emi.Trendsquare.com</a></p>
                         <p class="gray-text">Created 4 years ago</p>
                         <br>
                         <p class="gray-text">20 pages • 320posts</p>
                         <p class="gray-text">37 208 664 visitors</p>
+                    </div>
+                    <div class="col-md-1" style="position: relative;">
+
+                        <span class="image-actions" data-original-title="" title="" aria-describedby=""></span>
+<!--                        <div class="popover fade bottom in" role="tooltip" id="popover928460" style="top: 16px; left: 170.5px; display: block;">-->
+<!--                            <div class="arrow" style="left: 50%;"></div>-->
+<!--                            <h3 class="popover-title" style="display: none;"></h3>-->
+<!--                            <div class="popover-content">-->
+<!--                                <span class="open-image-details">Details</span><span class="delete-image">Delete</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                 </div>
                 <!--End block template-->
 
-                <div class="col-md-5 col-md-offset-1 blog-screenshot-div">
-                    <div class="col-md-4 blog-screenshot">
-                        <img src="http://img.informer.com/screenshots/2941/2941717_2.jpg" alt="Screenshot">
-                    </div>
-                    <div class="col-md-7">
-                        <p>Emi.Trendsquare.com</p>
-                        <p class="gray-text">Created 4 years ago</p>
-                        <br>
-                        <p class="gray-text">20 pages • 320posts</p>
-                        <p class="gray-text">37 208 664 visitors</p>
-                    </div>
-                </div>
 
-                <div class="col-md-5 col-md-offset-1 blog-screenshot-div">
-                    <div class="col-md-4 blog-screenshot">
-                        <img src="http://img.informer.com/screenshots/2941/2941717_2.jpg" alt="Screenshot">
-                    </div>
-                    <div class="col-md-7">
-                        <p>Emi.Trendsquare.com</p>
-                        <p class="gray-text">Created 4 years ago</p>
-                        <br>
-                        <p class="gray-text">20 pages • 320posts</p>
-                        <p class="gray-text">37 208 664 visitors</p>
-                    </div>
-                </div>
 
             </div>
 
