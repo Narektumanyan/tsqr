@@ -21,7 +21,7 @@ $assetUrl = AppAsset::register($this)->baseUrl;
             <a href="/post/pages">Pages</a>
         </li>
         <li>
-            <a href="#Comments">Comments</a>
+            <a href="/post/comments">Comments</a>
         </li>
         <li >
             <a href="/post/categories">Categories</a>

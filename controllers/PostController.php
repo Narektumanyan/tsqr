@@ -1010,4 +1010,8 @@ class PostController extends SecurityController
         echo json_encode($response);
         die();
     }
+
+    public function actionComments(){
+        return $this->render("comments");
+    }
 }

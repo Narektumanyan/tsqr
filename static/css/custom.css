@@ -136,7 +136,7 @@ hr.blog-line {
 }
 
 .left-brd{
-    border-left: 1px dotted gray;
+    border-left: 1px dashed gray;
 }
 .active, .input-title{
     font-weight: 600;
@@ -219,3 +219,60 @@ hr.blog-line {
     background-size: 4px 16px;
     cursor: pointer;
 }
+
+/*Comment page*/
+.comment-data{
+    border-bottom: 1px solid #eff4f4;
+    padding: 20px 2px 20px 2px;
+}
+.comment-data-title{
+    border-bottom: 2px solid #eff4f4;
+    margin-top: 30px;
+}
+@media all and (max-width: 768px){
+    .dateDiv{
+        text-align: left;
+    }
+}
+.dateDiv{
+    text-align: right;
+}
+.approve-button{
+    padding: 0 0;
+    width: 65px;
+    height: 20px;
+    color: #FD3768;
+    border: none;
+    border: 1px solid #FD3768;
+    background: transparent;
+    border-radius: 2px;
+}
+.approve-button:after{
+    content: "Approve";
+}
+.approve-button-active{
+    padding: 0 0;
+    width: 65px;
+    height: 20px;
+    color: white;
+    background: #FD3768;
+    border: none;
+    border: 1px solid #FD3768;
+    border-radius: 2px;
+}
+.approve-button-active:after{
+    content: "Approved";
+}
+.author-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+.post-links {
+    visibility: hidden;
+}
+.commentDiv:hover .post-links {
+    visibility: visible;
+    color: #bcc4c5;
+}
+/*End Comment page*/

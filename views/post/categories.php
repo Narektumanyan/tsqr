@@ -11,7 +11,7 @@ use yii\helpers\Url;
             <a href="/post/pages">Pages</a>
         </li>
         <li>
-            <a href="#Comments">Comments</a>
+            <a href="/post/comments">Comments</a>
         </li>
         <li class="active">
             <a href="/post/categories">Categories</a>
