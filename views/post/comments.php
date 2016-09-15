@@ -34,7 +34,7 @@ $assetUrl = AppAsset::register($this)->baseUrl;
             <li><a href="#" class="" data-status="">All (2)</a></li>
             <li><a href="#" class="" data-status="">Pending (1)</a></li>
             <li><a href="#" class="" data-status="">Approved (2)</a></li>
-            <li><a href="#" class="" data-status="">Trashed (3)</a></li>
+            <li><a href="#" class="" data-status="">Trashed (3)</a></li><!--Add class trash-->
         </ul>
 <!--        <div class="new-post">-->
 <!--            <a href="/post/publish">new post</a>-->
@@ -87,7 +87,8 @@ $assetUrl = AppAsset::register($this)->baseUrl;
 
         <div class="row comment-data-title">
             <div class="col-xs-1 col-md-1">
-                <input type="checkbox">
+                <input type="checkbox" id="checkAll" name="cb" class="checkOff">
+                <label for="checkAll"></label>
             </div>
             <div class="col-xs-1 col-md-1 dateDiv">
                 <h4>Date</h4>
@@ -106,7 +107,8 @@ $assetUrl = AppAsset::register($this)->baseUrl;
         <!--Block for loop-->
         <div class="row comment-data">
             <div class="col-xs-1 col-md-1 checkboxDiv">
-                <input type="checkbox">
+                <input type="checkbox" id="c1" name="cb"  class="checkOff">
+                <label for="c1"></label>
             </div>
             <div class="col-xs-1 col-md-1 dateDiv">
                 <p class="gray-text">04/22/2015 at 17:05</p>
@@ -132,7 +134,8 @@ $assetUrl = AppAsset::register($this)->baseUrl;
 
         <div class="row comment-data">
             <div class="col-xs-1 col-md-1 checkboxDiv">
-                <input type="checkbox">
+                <input type="checkbox" id="c2" name="cb"  class="checkOff">
+                <label for="c2"></label>
             </div>
             <div class="col-xs-1 col-md-1 dateDiv">
                 <p class="gray-text">04/22/2015 at 17:05</p>
@@ -157,7 +160,8 @@ $assetUrl = AppAsset::register($this)->baseUrl;
 
         <div class="row comment-data">
             <div class="col-xs-1 col-md-1 checkboxDiv">
-                <input type="checkbox">
+                <input type="checkbox" id="c3" name="cb" class="checkOff">
+                <label for="c3"></label>
             </div>
             <div class="col-xs-1 col-md-1 dateDiv">
                 <p class="gray-text">04/22/2015 at 17:05</p>
@@ -184,9 +188,6 @@ $assetUrl = AppAsset::register($this)->baseUrl;
     </div>
 
 
-
-
-
 <!--<!--If there is no posts-->
 <!--        <div class="no-posts">-->
 <!--            <h2>You haven't got any comment yet</h2>-->
@@ -210,3 +211,93 @@ $assetUrl = AppAsset::register($this)->baseUrl;
 </div>
 
 
+<div class="pocket"><div class="pocket-inner " style="">
+        <div class="header-window minimize">
+            <div class="header-title"><b>Pocket</b><br>1 videos</div>
+            <i class="header-control "></i>
+        </div>
+        <div class="pocket-wrapper">
+
+            <div>
+                <div class="pocket-item">
+                    <div class="video-thumbnail-container">
+                        <img src="https://i.vimeocdn.com/video/452636628_295x166.jpg?r=pad" class="thumbnail" style="width: 92px; height: 92px">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="https://vimeo.com/72474493" title="MiTechMate.com - 24/7 Online PC Repair Services, Best Virus Removal Services">MiTechMate.com - 24/7 Online PC Repair Services, Best Virus Removal Services</a>
+                        </div>
+                        <div class="channel-link">From <a href="https://vimeo.com/mitechmate" title="MiTechMate">MiTechMate</a></div>
+                        <div class="video-detail"> views <span>3 years ago</span></div>
+                        <a class="new-post-link" href="/post/publish?video_id=72474493&amp;type=vimeo&amp;width=640&amp;height=360">Create a post</a>
+                        <i class="delete-from-pocket"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div>
+                <div class="pocket-item">
+                    <div class="video-thumbnail-container">
+                        <img src="https://i.vimeocdn.com/video/452636628_295x166.jpg?r=pad" class="thumbnail" style="width: 92px; height: 92px">
+                    </div>
+                    <div class="info">
+                        <div class="title">
+                            <a href="https://vimeo.com/72474493" title="MiTechMate.com - 24/7 Online PC Repair Services, Best Virus Removal Services">MiTechMate.com - 24/7 Online PC Repair Services, Best Virus Removal Services</a>
+                        </div>
+                        <div class="channel-link">From <a href="https://vimeo.com/mitechmate" title="MiTechMate">MiTechMate</a></div>
+                        <div class="video-detail"> views <span>3 years ago</span></div>
+                        <a class="new-post-link" href="/post/publish?video_id=72474493&amp;type=vimeo&amp;width=640&amp;height=360">Create a post</a>
+                        <i class="delete-from-pocket"></i>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+
+        var numItems = $('.pocket-item').length;
+
+        $('#checkAll').change(function() {
+            var checkboxes = $(".checkOff");
+            if($(this).is(':checked')) {
+                checkboxes.prop('checked', true);
+            } else {
+                checkboxes.prop('checked', false);
+            }
+        });
+
+           $(".checkOff").change(function(){
+               if(checkOff.is(':checked')){
+                   $(".trash").show();
+               }else{
+                   $(".trash").hide();
+               }
+        });
+
+
+        $(".pocket").animate({"bottom":-numItems*120+"px"}, 400, "linear", function(){
+            $(".header-control").addClass("pocketOpen");
+        });
+        $(".header-control").click(function(){
+            if($(this).hasClass("pocketOpen")){
+                $(".pocket").animate({"bottom":"0px"}, 400, "linear", function(){
+                    $(".header-control").removeClass("pocketOpen");
+                });
+            }else{
+                $(".pocket").animate({"bottom":-numItems*120+"px"}, 400, "linear", function(){
+                    $(".header-control").addClass("pocketOpen");
+                });
+            }
+
+        })
+
+
+
+    });
+</script>

@@ -276,4 +276,51 @@ hr.blog-line {
     visibility: visible;
     color: #bcc4c5;
 }
+
+
+input[type="checkbox"] {
+    display: none;
+}
+label {
+    cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+    border: 1px solid #dadfe0;
+    content: "\00a0";
+    display: inline-block;
+    font: 12px/1em sans-serif;
+    height: 12px;
+    margin: 0 0.25em 0 0;
+    padding: 0;
+    vertical-align: top;
+    width: 12px;
+    border-radius: 2px;
+}
+input[type="checkbox"]:checked + label:before {
+    background: #fc3768;
+    color: white;
+    content: "\2714";
+    text-align: center;
+    border: none;
+}
+input[type="checkbox"]:checked + label:after {
+    font-weight: bold;
+}
+.trash{
+    font-size: 14px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: #ffffff !important;
+    background-color: #fc3768;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: top;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    padding: 0 20px;
+    letter-spacing: 2px;
+}
+.pocketOpen{
+    background: url("../images/login/pocket-open.png") 24px 30px no-repeat !important;
+}
 /*End Comment page*/
