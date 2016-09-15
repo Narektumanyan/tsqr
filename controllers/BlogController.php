@@ -103,8 +103,13 @@ class BlogController extends SecurityController
     
     public function actionIndex() 
     {
-//        echo 11111;
-        return $this->render('index');
+        $blogs = Blog::find()->where(['user_id' => Yii::$app->user->id])->all();
+//        dbg($blogs);
+        
+        
+        return $this->render('index', [
+                    'blogs' => $blogs
+                ]);
     }
 }
 

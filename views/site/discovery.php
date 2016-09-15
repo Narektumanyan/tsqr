@@ -240,130 +240,68 @@ use yii\widgets\ActiveForm;
     }*/
 </style>
 
-<div id="setupBlog" class="bim-wrapper onlyupload" style="display: none">
-    <div class="bim-modal bim-modal--open" style="opacity: 1; min-height: 470px; height: auto;">
-        <span class="modal-close"></span>
-        <div class="modal-media-title">Howdy! Let's get started by creating your personal blog</div>
-        <hr class="blog-line" />
-        <form id="blogForm" class="form-horizontal" role="form" action="/blog/create" method="POST">
-            <?php 
-//            $form = ActiveForm::begin([
-//                'id' => 'blogForm',
-//                'method' => 'post',
-//                'action' => '/blog/create',
-//                'options' => ['class' => 'form-horizontal'],
-//            ]); 
-            ?>
-            <div class="form-group">
-                <label for="inputBlogName" class="col-sm-2 control-label">Name</label>
-                <div class="col-sm-3 col-sm-offset-0">
-                    <?php // echo $form->field($blogModel, 'name')->textInput(['class' => 'aaaa form-control blogCreateInput', 'id' => 'inputBlogName', 'placeholder' => 'Name'])->label(false) ?>
-                    <input name="Blog[blog-name]" type="text" class="form-control blogCreateInput" id="inputBlogName" placeholder="Name">
-                </div>
-                <div class="col-sm-2">
-                    <span class="blogCreatePostfix">.trendsquare.com</span>
-                </div>
-                <div class="col-sm-4">
-                    <div class="name-taken"></div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputBlogTitle" class="col-sm-2 control-label">Title</label>
-                <div class="col-sm-9 col-sm-offset-0">
-                    <input name="Blog[blog-title]" type="text" class="form-control blogCreateInput" id="inputBlogTitle" placeholder="Title">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="blogCreateInputArea" class="col-sm-2 control-label">Description</label>
-                <div class="col-sm-9 col-sm-offset-0">
-                    <textarea name="Blog[blog-descr]" class="form-control blogCreateInput" id="blogCreateInputArea" rows="3"></textarea>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label" id="blogTagLabel">Tags</label>
-
-                <div id="blogTags" class="col-sm-9">
-                    <div data-tags-input-name="tag" id="tagBox"></div>
-                </div>
-
-            </div>
-
-            <div class="form-group" id="blogCreateControls">
-                <div class="action-buttons-panel text-right">
-                    <button class="app-btn-default pink action-add">Create</button>
-                    <button class="app-btn-default action-cancel">Cancel</button>
-                </div>
-            </div>
-            <br>
-            <br>
-            
-        <?php // ActiveForm::end(); ?>    
-        </form>
-    </div>
-</div>
+    <!-- BLOG POPUP --> 
+    <?= $this->render('//blocks/_setupBlogs'); ?>
 
 <script type="text/javascript">
 
-    $("#tagBox").tagging("emptyInput");
-
-    $(document).ready(function() {
-
-        $('.setup-blog').bind('click', function(e) {
-            console.log('aaaaa');
-            e.preventDefault();
-            $('#setupBlog').fadeIn(200);
-        });
-
-        $('#setupBlog').bind('click', function(e){
-            if( $(e.target).hasClass('bim-wrapper') ) {
-                $(this).fadeOut(200);
-            } else {
-                e.stopPropagation();
-            }
-        });
-        $('.modal-close, .action-cancel').bind('click', function(e){
-            e.preventDefault();
-            $('.bim-wrapper').fadeOut(200);
-        });
-
-
-        $('.blog-add-tag').bind('click', function(e) {
-            e.preventDefault();
-            $('.blog-add-tag-input').fadeIn();
-        });
-        
-        
-        $('#inputBlogName').bind('change', function() {
-            
-            $.ajax({
-                url: '/blog/checkname',
-                method: 'POST',
-                dataType: 'JSON',
-                data: { blogName: $(this).val() },
-                success: function(response) {
-                    if(response.success == 0) {
-                        $('.name-taken').addClass('text-danger').text(response.error);
-                    } else if(response.success == 1) {
-                        $('.name-taken').removeClass('text-danger').addClass('text-success').text(response.message);
-                    }
-                }
-            });
-        });
-        
-        $('#blogForm').bind('submit', function() {
-            if($('#inputBlogName').val() == '') {
-                alert('Please fill in the fields!');
-                return false;
-            }
-        })
-        
-        $('button.close').click(function() {
-            $(this).parent().fadeOut();
-        })
-        
-
-    });
+//    $("#tagBox").tagging("emptyInput");
+//
+//    $(document).ready(function() {
+//
+//        $('.setup-blog').bind('click', function(e) {
+//            console.log('aaaaa');
+//            e.preventDefault();
+//            $('#setupBlog').fadeIn(200);
+//        });
+//
+//        $('#setupBlog').bind('click', function(e){
+//            if( $(e.target).hasClass('bim-wrapper') ) {
+//                $(this).fadeOut(200);
+//            } else {
+//                e.stopPropagation();
+//            }
+//        });
+//        $('.modal-close, .action-cancel').bind('click', function(e){
+//            e.preventDefault();
+//            $('.bim-wrapper').fadeOut(200);
+//        });
+//
+//
+//        $('.blog-add-tag').bind('click', function(e) {
+//            e.preventDefault();
+//            $('.blog-add-tag-input').fadeIn();
+//        });
+//        
+//        
+//        $('#inputBlogName').bind('change', function() {
+//            
+//            $.ajax({
+//                url: '/blog/checkname',
+//                method: 'POST',
+//                dataType: 'JSON',
+//                data: { blogName: $(this).val() },
+//                success: function(response) {
+//                    if(response.success == 0) {
+//                        $('.name-taken').addClass('text-danger').text(response.error);
+//                    } else if(response.success == 1) {
+//                        $('.name-taken').removeClass('text-danger').addClass('text-success').text(response.message);
+//                    }
+//                }
+//            });
+//        });
+//        
+//        $('#blogForm').bind('submit', function() {
+//            if($('#inputBlogName').val() == '') {
+//                alert('Please fill in the fields!');
+//                return false;
+//            }
+//        })
+//        
+//        $('button.close').click(function() {
+//            $(this).parent().fadeOut();
+//        })
+//        
+//
+//    });
 </script>

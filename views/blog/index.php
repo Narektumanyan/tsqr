@@ -106,14 +106,16 @@
 
             <div class="row profile-menu-block">
                 <div class="col-md-7 col-md-offset-1">
-                    <p class="input-title">BLOGS (3)</p>
+                    <p class="input-title">BLOGS (<?= count($blogs); ?>)</p>
                 </div>
                 <div class="col-md-2 pull-right">
-                    <div class="add-new profile-add-new">ADD NEW</div>
+                    <div class="add-new profile-add-new setup-blog">ADD NEW</div>
                 </div>
             </div>
-
+            
+            
             <div class="blog-divs">
+                <?php foreach($blogs as $blog): ?>
 
                 <!--Block template-->
                 <div class="col-md-5 col-md-offset-1 blog-screenshot-div">
@@ -121,8 +123,8 @@
                         <a href="#"><img src="http://img.informer.com/screenshots/2941/2941717_2.jpg" alt="Screenshot"></a>
                     </div>
                     <div class="col-md-7">
-                        <p><a href="#">Emi.Trendsquare.com</a></p>
-                        <p class="gray-text">Created 4 years ago</p>
+                        <p><a href="#"><?= $blog->name ?>.Trendsquare.com</a></p>
+                        <p class="gray-text">Created <?= Yii::$app->formatter->asDate($blog->create_date, 'medium'); ?></p>
                         <br>
                         <p class="gray-text">20 pages • 320posts</p>
                         <p class="gray-text">37 208 664 visitors</p>
@@ -130,18 +132,18 @@
                     <div class="col-md-1" style="position: relative;">
 
                         <span class="image-actions" data-original-title="" title="" aria-describedby=""></span>
-<!--                        <div class="popover fade bottom in" role="tooltip" id="popover928460" style="top: 16px; left: 170.5px; display: block;">-->
-<!--                            <div class="arrow" style="left: 50%;"></div>-->
-<!--                            <h3 class="popover-title" style="display: none;"></h3>-->
-<!--                            <div class="popover-content">-->
-<!--                                <span class="open-image-details">Details</span><span class="delete-image">Delete</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
+<!--                        <div class="popover fade bottom in" role="tooltip" id="popover928460" style="top: 16px; left: 170.5px; display: block;">
+                            <div class="arrow" style="left: 50%;"></div>
+                            <h3 class="popover-title" style="display: none;"></h3>
+                            <div class="popover-content">
+                                <span class="open-image-details">Details</span><span class="delete-image">Delete</span>
+                            </div>
+                        </div>-->
                     </div>
                 </div>
                 <!--End block template-->
 
-
+                <?php endforeach; ?>
 
             </div>
 
@@ -149,6 +151,9 @@
         </div>
     </div>
 </div>
+
+    <!-- BLOG POPUP --> 
+    <?= $this->render('//blocks/_setupBlogs'); ?>
 
 <!--
 <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>

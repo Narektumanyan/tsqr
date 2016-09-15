@@ -34,5 +34,6 @@ npm-debug.log
 web.config
 
 web/uploads/*
+web/assets/*
 !web/uploads/.gitkeep
 .rocketeer/logs

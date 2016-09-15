@@ -115,6 +115,7 @@ class AppAsset extends AssetBundle
 
         'js/layout/layout.js',
         'js/tagging.min.js',
+        'js/custom.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
