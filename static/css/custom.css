@@ -323,4 +323,13 @@ input[type="checkbox"]:checked + label:after {
 .pocketOpen{
     background: url("../images/login/pocket-open.png") 24px 30px no-repeat !important;
 }
+
+.dropMenu{
+    top: 16px;
+    display: none;
+    transform: translateX(-34%);
+}
+.menuShown{
+    display: block;
+}
 /*End Comment page*/
